@@ -62,12 +62,12 @@ VALIDATION_TARGETS = [
 def load_yaml(path):
     """Load a YAML file."""
     with path.open("r", encoding="utf-8") as file:
-    return yaml.safe_load(file)
+        return yaml.safe_load(file)
 
 def load_json(path):
     """Load a JSON file."""
     with path.open("r", encoding="utf-8") as file:
-    return json.load(file)
+        return json.load(file)
 
 def format_error_path(error):
    """Return a readable JSON path for a validation error."""
