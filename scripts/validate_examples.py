@@ -24,7 +24,7 @@ raise SystemExit(1) from exc
 
 try:
 from jsonschema import Draft202012Validator, FormatChecker
-from jsonschema.exceptions import SchemaError, ValidationError
+from jsonschema.exceptions import SchemaError
 except ImportError as exc:
 print("Missing dependency: jsonschema")
 print("Install with: pip install jsonschema")
@@ -192,5 +192,7 @@ print("All available example validations passed.")
 return 0
 ```
 
+if **name** == "**main**":
 sys.exit(main())
+
 
