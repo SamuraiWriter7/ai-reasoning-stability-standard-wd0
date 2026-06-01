@@ -47,4 +47,5 @@ steps:
   - name: Validate examples
     run: |
       python scripts/validate_examples.py
+```
 
