@@ -16,11 +16,11 @@ import sys
 from pathlib import Path
 
 try:
-import yaml
+    import yaml
 except ImportError as exc:
-print("Missing dependency: PyYAML")
-print("Install with: pip install pyyaml")
-raise SystemExit(1) from exc
+    print("Missing dependency: PyYAML")
+    print("Install with: pip install pyyaml")
+    raise SystemExit(1) from exc
 
 try:
 from jsonschema import Draft202012Validator, FormatChecker
