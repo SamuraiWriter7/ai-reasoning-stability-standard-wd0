@@ -2,9 +2,6 @@
 """
 Validate ARSS-WD0 example YAML files against JSON Schema files.
 
-Repository:
-ai-reasoning-stability-standard-wd0
-
 Required Python packages:
 
 * PyYAML
@@ -14,12 +11,9 @@ Usage:
 python scripts/validate_examples.py
 """
 
-from **future** import annotations
-
 import json
 import sys
 from pathlib import Path
-from typing import Any
 
 try:
 import yaml
@@ -65,23 +59,23 @@ VALIDATION_TARGETS = [
 },
 ]
 
-def load_yaml(path: Path) -> Any:
+def load_yaml(path):
 """Load a YAML file."""
 with path.open("r", encoding="utf-8") as file:
 return yaml.safe_load(file)
 
-def load_json(path: Path) -> Any:
+def load_json(path):
 """Load a JSON file."""
 with path.open("r", encoding="utf-8") as file:
 return json.load(file)
 
-def format_error_path(error: ValidationError) -> str:
+def format_error_path(error):
 """Return a readable JSON path for a validation error."""
 if not error.absolute_path:
 return "$"
 
 ```
-parts: list[str] = ["$"]
+parts = ["$"]
 
 for part in error.absolute_path:
     if isinstance(part, int):
@@ -92,7 +86,7 @@ for part in error.absolute_path:
 return "".join(parts)
 ```
 
-def validate_file(example_path: Path, schema_path: Path) -> list[str]:
+def validate_file(example_path, schema_path):
 """Validate one example file against one schema file."""
 try:
 data = load_yaml(example_path)
@@ -117,7 +111,7 @@ validation_errors = sorted(
     key=lambda err: list(err.absolute_path),
 )
 
-errors: list[str] = []
+errors = []
 
 for error in validation_errors:
     path = format_error_path(error)
@@ -126,7 +120,7 @@ for error in validation_errors:
 return errors
 ```
 
-def main() -> int:
+def main():
 """Run all validations."""
 print("ARSS-WD0 example validation")
 print(f"Repository root: {REPO_ROOT}")
@@ -138,9 +132,9 @@ skipped = 0
 
 for target in VALIDATION_TARGETS:
     name = target["name"]
-    example_path: Path = target["example"]
-    schema_path: Path = target["schema"]
-    required: bool = target["required"]
+    example_path = target["example"]
+    schema_path = target["schema"]
+    required = target["required"]
 
     print(f"Validating: {name}")
     print(f"  Example: {example_path.relative_to(REPO_ROOT)}")
@@ -198,6 +192,5 @@ print("All available example validations passed.")
 return 0
 ```
 
-if **name** == "**main**":
-raise SystemExit(main())
+sys.exit(main())
 
