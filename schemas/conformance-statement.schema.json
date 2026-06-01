@@ -1,0 +1,650 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://github.com/SamuraiWriter7/ai-reasoning-stability-standard-wd0/schemas/conformance-statement.schema.json",
+"title": "AI Reasoning Stability Standard - Conformance Statement Schema",
+"description": "JSON Schema for validating ARSS-WD0 conformance statement records.",
+"type": "object",
+"additionalProperties": true,
+"required": [
+"standard",
+"standard_version",
+"document_type",
+"example_id",
+"date",
+"status",
+"metadata",
+"conformance_statement",
+"system",
+"scope",
+"claimed_profile",
+"human_authority_boundary",
+"traceability_scope",
+"governance_process",
+"claim_boundaries",
+"known_limitations"
+],
+"properties": {
+"standard": {
+"type": "string",
+"const": "AI Reasoning Stability Standard"
+},
+"standard_version": {
+"type": "string",
+"description": "The ARSS version used by the conformance statement.",
+"examples": [
+"WD0"
+]
+},
+"document_type": {
+"type": "string",
+"const": "conformance_statement_example"
+},
+"example_id": {
+"type": "string",
+"minLength": 1
+},
+"date": {
+"type": "string",
+"format": "date"
+},
+"status": {
+"type": "string",
+"enum": [
+"draft",
+"example",
+"review",
+"final"
+]
+},
+"metadata": {
+"$ref": "#/$defs/metadata"
+},
+"conformance_statement": {
+"$ref": "#/$defs/conformance_statement"
+},
+"system": {
+"$ref": "#/$defs/system"
+},
+"scope": {
+"$ref": "#/$defs/scope"
+},
+"claimed_profile": {
+"$ref": "#/$defs/claimed_profile"
+},
+"profile_a_documentation_alignment": {
+"$ref": "#/$defs/profile_a_documentation_alignment"
+},
+"profile_b_structural_implementation_alignment": {
+"$ref": "#/$defs/profile_claim_status"
+},
+"profile_c_governed_deployment_alignment": {
+"$ref": "#/$defs/profile_claim_status"
+},
+"human_authority_boundary": {
+"$ref": "#/$defs/human_authority_boundary"
+},
+"traceability_scope": {
+"$ref": "#/$defs/traceability_scope"
+},
+"governance_process": {
+"$ref": "#/$defs/governance_process"
+},
+"value_assessment": {
+"$ref": "#/$defs/value_assessment"
+},
+"requirement_mapping_summary": {
+"$ref": "#/$defs/requirement_mapping_summary"
+},
+"evidence": {
+"$ref": "#/$defs/evidence"
+},
+"claim_boundaries": {
+"$ref": "#/$defs/claim_boundaries"
+},
+"known_limitations": {
+"$ref": "#/$defs/string_array"
+},
+"review": {
+"$ref": "#/$defs/review"
+}
+},
+"$defs": {
+"metadata": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"repository",
+"file",
+"purpose",
+"claim_type",
+"official_certification",
+"legal_compliance_claimed",
+"safety_guarantee_claimed"
+],
+"properties": {
+"repository": {
+"type": "string"
+},
+"file": {
+"type": "string"
+},
+"purpose": {
+"type": "string"
+},
+"claim_type": {
+"type": "string"
+},
+"official_certification": {
+"type": "boolean",
+"const": false
+},
+"legal_compliance_claimed": {
+"type": "boolean",
+"const": false
+},
+"safety_guarantee_claimed": {
+"type": "boolean",
+"const": false
+}
+}
+},
+"conformance_statement": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"statement_id",
+"standard",
+"version",
+"profile",
+"claim_type",
+"assessment_date",
+"assessor",
+"review_status"
+],
+"properties": {
+"statement_id": {
+"type": "string",
+"minLength": 1
+},
+"standard": {
+"type": "string",
+"const": "AI Reasoning Stability Standard"
+},
+"version": {
+"type": "string"
+},
+"profile": {
+"$ref": "#/$defs/conformance_profile"
+},
+"claim_type": {
+"type": "string",
+"enum": [
+"self_declared",
+"illustrative_example",
+"internal_review",
+"external_review"
+]
+},
+"assessment_date": {
+"type": "string",
+"format": "date"
+},
+"assessor": {
+"type": "string"
+},
+"review_status": {
+"type": "string"
+}
+}
+},
+"system": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"system_name",
+"system_version",
+"repository_or_documentation",
+"deployment_context",
+"deployment_status",
+"intended_use",
+"excluded_use"
+],
+"properties": {
+"system_name": {
+"type": "string"
+},
+"system_version": {
+"type": "string"
+},
+"repository_or_documentation": {
+"type": "string"
+},
+"deployment_context": {
+"type": "string"
+},
+"deployment_status": {
+"type": "string"
+},
+"intended_use": {
+"$ref": "#/$defs/string_array"
+},
+"excluded_use": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"scope": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"covered_reasoning_tasks",
+"excluded_reasoning_tasks",
+"risk_context"
+],
+"properties": {
+"covered_reasoning_tasks": {
+"$ref": "#/$defs/string_array"
+},
+"excluded_reasoning_tasks": {
+"$ref": "#/$defs/string_array"
+},
+"risk_context": {
+"$ref": "#/$defs/risk_level"
+},
+"scope_notes": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"claimed_profile": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"profile_id",
+"profile_name",
+"profile_description"
+],
+"properties": {
+"profile_id": {
+"type": "string",
+"enum": [
+"Profile A",
+"Profile B",
+"Profile C"
+]
+},
+"profile_name": {
+"type": "string",
+"enum": [
+"Documentation Alignment",
+"Structural Implementation Alignment",
+"Governed Deployment Alignment"
+]
+},
+"profile_description": {
+"type": "string"
+},
+"profile_limitations": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"profile_a_documentation_alignment": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"scope_declaration": {
+"$ref": "#/$defs/evidence_status"
+},
+"reasoning_stability_objective": {
+"$ref": "#/$defs/evidence_status"
+},
+"architecture_documentation": {
+"$ref": "#/$defs/evidence_status"
+},
+"terminology": {
+"$ref": "#/$defs/evidence_status"
+},
+"requirements": {
+"$ref": "#/$defs/evidence_status"
+},
+"conformance_model": {
+"$ref": "#/$defs/evidence_status"
+},
+"claim_boundaries": {
+"$ref": "#/$defs/evidence_status"
+},
+"use_cases": {
+"$ref": "#/$defs/evidence_status"
+},
+"external_mapping": {
+"$ref": "#/$defs/evidence_status"
+},
+"examples": {
+"$ref": "#/$defs/evidence_status"
+}
+}
+},
+"evidence_status": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"present",
+"evidence"
+],
+"properties": {
+"present": {
+"type": "boolean"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"profile_claim_status": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"claimed",
+"reason"
+],
+"properties": {
+"claimed": {
+"type": "boolean"
+},
+"reason": {
+"type": "string"
+},
+"missing_evidence": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"human_authority_boundary": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"defined",
+"ai_output_status",
+"final_human_authority_required_for",
+"evidence"
+],
+"properties": {
+"defined": {
+"type": "boolean"
+},
+"ai_output_status": {
+"type": "string",
+"enum": [
+"advisory_only",
+"requires_human_review",
+"approved_by_human",
+"rejected_by_human",
+"not_applicable"
+]
+},
+"final_human_authority_required_for": {
+"$ref": "#/$defs/string_array"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+},
+"notes": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"traceability_scope": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"defined",
+"traceability_level",
+"included_trace_types",
+"excluded_trace_types"
+],
+"properties": {
+"defined": {
+"type": "boolean"
+},
+"traceability_level": {
+"type": "string",
+"enum": [
+"none",
+"documentation_level",
+"summary_level",
+"detailed",
+"audit_ready"
+]
+},
+"included_trace_types": {
+"$ref": "#/$defs/string_array"
+},
+"excluded_trace_types": {
+"$ref": "#/$defs/string_array"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"governance_process": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"defined",
+"governance_level",
+"governance_controls"
+],
+"properties": {
+"defined": {
+"type": "boolean"
+},
+"governance_level": {
+"type": "string"
+},
+"governance_controls": {
+"$ref": "#/$defs/string_array"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+},
+"limitations": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"value_assessment": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"defined": {
+"type": "boolean"
+},
+"value_criteria": {
+"$ref": "#/$defs/string_array"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+},
+"limitations": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"requirement_mapping_summary": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"mapping_status": {
+"type": "string"
+},
+"full_mapping_file": {
+"type": "string"
+},
+"profile_a_core_requirements": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/requirement_summary_item"
+}
+}
+}
+},
+"requirement_summary_item": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"requirement_id",
+"requirement_name",
+"status",
+"evidence"
+],
+"properties": {
+"requirement_id": {
+"type": "string",
+"pattern": "^ARSS-[A-Z]+-[0-9]{3}$"
+},
+"requirement_name": {
+"type": "string"
+},
+"status": {
+"$ref": "#/$defs/requirement_status"
+},
+"evidence": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"evidence": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"documentation": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/evidence_item"
+}
+},
+"examples": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/evidence_item"
+}
+}
+}
+},
+"evidence_item": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"path",
+"description"
+],
+"properties": {
+"path": {
+"type": "string"
+},
+"description": {
+"type": "string"
+}
+}
+},
+"claim_boundaries": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"official_standard_claimed",
+"certification_claimed",
+"legal_compliance_claimed",
+"complete_ai_safety_claimed",
+"guaranteed_correctness_claimed",
+"universal_applicability_claimed",
+"production_readiness_claimed",
+"replacement_of_existing_standards_claimed"
+],
+"properties": {
+"official_standard_claimed": {
+"type": "boolean",
+"const": false
+},
+"certification_claimed": {
+"type": "boolean",
+"const": false
+},
+"legal_compliance_claimed": {
+"type": "boolean",
+"const": false
+},
+"complete_ai_safety_claimed": {
+"type": "boolean",
+"const": false
+},
+"guaranteed_correctness_claimed": {
+"type": "boolean",
+"const": false
+},
+"universal_applicability_claimed": {
+"type": "boolean",
+"const": false
+},
+"production_readiness_claimed": {
+"type": "boolean",
+"const": false
+},
+"replacement_of_existing_standards_claimed": {
+"type": "boolean",
+"const": false
+},
+"notes": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"review": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"review_status": {
+"type": "string"
+},
+"next_steps": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"conformance_profile": {
+"type": "string",
+"enum": [
+"Profile A: Documentation Alignment",
+"Profile B: Structural Implementation Alignment",
+"Profile C: Governed Deployment Alignment"
+]
+},
+"risk_level": {
+"type": "string",
+"enum": [
+"low",
+"medium",
+"high",
+"critical",
+"unspecified"
+]
+},
+"requirement_status": {
+"type": "string",
+"enum": [
+"addressed",
+"partially_addressed",
+"not_addressed",
+"not_applicable",
+"planned"
+]
+},
+"string_array": {
+"type": "array",
+"items": {
+"type": "string"
+}
+}
+}
+}
