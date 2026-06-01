@@ -82,7 +82,7 @@ for part in error.absolute_path:
     else:
         parts.append(f".{part}")
 
-return "".join(parts)
+    return "".join(parts)
 
 def validate_file(example_path, schema_path):
     """Validate one example file against one schema file."""
