@@ -6,8 +6,7 @@ version: "WD0"
 date-released: "2026-05-31"
 
 authors:
-
-* name: "SamuraiWriter7"
+  - name: "SamuraiWriter7"
 
 repository-code: "https://github.com/SamuraiWriter7/ai-reasoning-stability-standard-wd0"
 url: "https://github.com/SamuraiWriter7/ai-reasoning-stability-standard-wd0"
@@ -15,26 +14,26 @@ url: "https://github.com/SamuraiWriter7/ai-reasoning-stability-standard-wd0"
 license: "MIT"
 
 keywords:
-
-* "AI reasoning stability"
-* "AI governance"
-* "AI safety"
-* "Multi-Wing Architecture"
-* "convergence window"
-* "oscillation control"
-* "traceability"
-* "human authority"
-* "value assessment"
-* "standardization"
-* "working draft"
-* "multi-agent reasoning"
+  - "AI reasoning stability"
+  - "AI governance"
+  - "AI safety"
+  - "Multi-Wing Architecture"
+  - "convergence window"
+  - "oscillation control"
+  - "traceability"
+  - "human authority"
+  - "value assessment"
+  - "standardization"
+  - "working draft"
+  - "multi-agent reasoning"
 
 abstract: >-
-AI Reasoning Stability Standard — Working Draft 0 proposes a structural
-framework for describing and assessing AI reasoning stability. The draft
-integrates Multi-Wing structural autonomy, convergence-window evaluation,
-oscillation control, traceability, value assessment, governance, and human
-authority layers. It is intended as an exploratory standardization-oriented
-working draft for research, documentation, implementation discussion, and
-governance review. This working draft does not claim official certification,
-legal compliance, complete AI safety, or approval by any standards body.
+  AI Reasoning Stability Standard — Working Draft 0 proposes a structural
+  framework for describing and assessing AI reasoning stability. The draft
+  integrates Multi-Wing structural autonomy, convergence-window evaluation,
+  oscillation control, traceability, value assessment, governance, and human
+  authority layers. It is intended as an exploratory standardization-oriented
+  working draft for research, documentation, implementation discussion, and
+  governance review. This working draft does not claim official certification,
+  legal compliance, complete AI safety, or approval by any standards body.
+
