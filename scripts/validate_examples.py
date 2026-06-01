@@ -72,7 +72,7 @@ def load_json(path):
 def format_error_path(error):
    """Return a readable JSON path for a validation error."""
    if not error.absolute_path:
-   return "$"
+       return "$"
 
 ```
 parts = ["$"]
