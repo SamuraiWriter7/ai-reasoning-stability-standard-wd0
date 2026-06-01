@@ -30,7 +30,7 @@ except ImportError as exc:
     print("Install with: pip install jsonschema")
     raise SystemExit(1) from exc
 
-REPO_ROOT = Path(**file**).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 VALIDATION_TARGETS = [
 {
