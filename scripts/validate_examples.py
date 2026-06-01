@@ -23,12 +23,12 @@ except ImportError as exc:
     raise SystemExit(1) from exc
 
 try:
-from jsonschema import Draft202012Validator, FormatChecker
-from jsonschema.exceptions import SchemaError
+    from jsonschema import Draft202012Validator, FormatChecker
+    from jsonschema.exceptions import SchemaError
 except ImportError as exc:
-print("Missing dependency: jsonschema")
-print("Install with: pip install jsonschema")
-raise SystemExit(1) from exc
+    print("Missing dependency: jsonschema")
+    print("Install with: pip install jsonschema")
+    raise SystemExit(1) from exc
 
 REPO_ROOT = Path(**file**).resolve().parents[1]
 
