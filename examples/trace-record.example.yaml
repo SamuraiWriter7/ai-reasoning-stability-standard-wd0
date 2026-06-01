@@ -1,0 +1,434 @@
+standard: "AI Reasoning Stability Standard"
+standard_version: "WD0"
+document_type: "trace_record_example"
+example_id: "trace-record-example-001"
+date: "2026-05-31"
+status: "example"
+
+metadata:
+repository: "ai-reasoning-stability-standard-wd0"
+file: "examples/trace-record.example.yaml"
+purpose: "Example machine-readable trace record for ARSS-WD0."
+claim_type: "illustrative_example"
+official_certification: false
+legal_compliance_claimed: false
+safety_guarantee_claimed: false
+
+trace_record:
+trace_id: "trace-001"
+trace_type: "reasoning_stability_trace"
+trace_level: "summary"
+trace_status: "complete_example"
+created_at: "2026-05-31T00:00:00Z"
+updated_at: "2026-05-31T00:00:00Z"
+
+system:
+system_name: "Example Multi-Wing Reasoning System"
+system_version: "0.1.0"
+deployment_context: "research_prototype"
+deployment_status: "non_production"
+conformance_profile: "Profile B: Structural Implementation Alignment"
+
+task_frame:
+task_id: "task-001"
+task_description: "Assess whether an AI-generated advisory output is stable enough for limited use."
+user_intent: "Request a reasoning-stability review."
+risk_level: "medium"
+expected_output: "limited_advisory_output"
+human_review_required: true
+constraints:
+- "AI output must remain advisory."
+- "No final real-world decision is permitted without human review."
+- "High-impact automated action is prohibited."
+assumptions:
+- assumption_id: "asm-001"
+description: "The system is operating in a research prototype context."
+status: "declared"
+- assumption_id: "asm-002"
+description: "The output will not be used for legal, medical, financial, or safety-critical decisions."
+status: "declared"
+- assumption_id: "asm-003"
+description: "Human review is available before any real-world action."
+status: "declared"
+
+trace_scope:
+included:
+- "task_frame"
+- "assumptions"
+- "wing_outputs"
+- "conflicts"
+- "convergence_window_result"
+- "oscillation_check"
+- "value_assessment"
+- "governance_review"
+- "human_authority_requirement"
+- "final_status"
+excluded:
+- "private chain-of-thought"
+- "model weights"
+- "proprietary internal activations"
+- "production system logs"
+- "personally identifiable information"
+
+trace_events:
+
+* event_id: "event-001"
+  event_type: "task_framed"
+  timestamp: "2026-05-31T00:00:00Z"
+  status: "completed"
+  summary: "Task frame was created with medium risk level and human review requirement."
+  related_objects:
+  task_id: "task-001"
+
+* event_id: "event-002"
+  event_type: "assumptions_recorded"
+  timestamp: "2026-05-31T00:01:00Z"
+  status: "completed"
+  summary: "Three assumptions were recorded for the reasoning cycle."
+  related_objects:
+  assumptions:
+  - "asm-001"
+  - "asm-002"
+  - "asm-003"
+
+* event_id: "event-003"
+  event_type: "multi_wing_reasoning_started"
+  timestamp: "2026-05-31T00:02:00Z"
+  status: "completed"
+  summary: "Multi-Wing reasoning process started."
+  related_objects:
+  wings:
+  - "analysis"
+  - "counter_analysis"
+  - "evidence_review"
+  - "risk_review"
+  - "value_review"
+  - "governance_review"
+
+* event_id: "event-004"
+  event_type: "wing_output_generated"
+  timestamp: "2026-05-31T00:03:00Z"
+  status: "completed"
+  summary: "Analysis Wing generated primary advisory conclusion."
+  related_objects:
+  wing_id: "analysis"
+
+* event_id: "event-005"
+  event_type: "wing_output_generated"
+  timestamp: "2026-05-31T00:04:00Z"
+  status: "completed"
+  summary: "Counter-Analysis Wing identified possible authority-boundary ambiguity."
+  related_objects:
+  wing_id: "counter_analysis"
+
+* event_id: "event-006"
+  event_type: "conflict_detected"
+  timestamp: "2026-05-31T00:05:00Z"
+  status: "completed"
+  summary: "A human authority boundary conflict was detected."
+  related_objects:
+  conflict_id: "conflict-001"
+  affected_wings:
+  - "analysis"
+  - "counter_analysis"
+  - "risk_review"
+  - "governance_review"
+
+* event_id: "event-007"
+  event_type: "conflict_bounded"
+  timestamp: "2026-05-31T00:06:00Z"
+  status: "completed"
+  summary: "Conflict was bounded by labeling output as advisory only and requiring human review."
+  related_objects:
+  conflict_id: "conflict-001"
+  resolution_id: "resolution-001"
+
+* event_id: "event-008"
+  event_type: "convergence_window_evaluated"
+  timestamp: "2026-05-31T00:07:00Z"
+  status: "completed"
+  summary: "Convergence window evaluated as provisionally converged with escalation required."
+  related_objects:
+  window_id: "cw-001"
+
+* event_id: "event-009"
+  event_type: "oscillation_checked"
+  timestamp: "2026-05-31T00:08:00Z"
+  status: "completed"
+  summary: "No harmful oscillation detected within the evaluation window."
+  related_objects:
+  oscillation_check_id: "osc-check-001"
+
+* event_id: "event-010"
+  event_type: "value_assessment_completed"
+  timestamp: "2026-05-31T00:09:00Z"
+  status: "completed"
+  summary: "Value assessment passed with limitations."
+  related_objects:
+  value_assessment_id: "value-001"
+
+* event_id: "event-011"
+  event_type: "governance_review_completed"
+  timestamp: "2026-05-31T00:10:00Z"
+  status: "completed"
+  summary: "Governance review determined that human review is required before real-world use."
+  related_objects:
+  governance_review_id: "gov-001"
+
+* event_id: "event-012"
+  event_type: "human_review_required"
+  timestamp: "2026-05-31T00:11:00Z"
+  status: "required"
+  summary: "Human final authority is required before final decision or deployment."
+  related_objects:
+  human_authority_id: "hal-001"
+
+* event_id: "event-013"
+  event_type: "final_status_recorded"
+  timestamp: "2026-05-31T00:12:00Z"
+  status: "completed"
+  summary: "Final reasoning state recorded as escalated."
+  related_objects:
+  final_status_id: "final-001"
+
+wing_outputs:
+
+* wing_id: "analysis"
+  wing_name: "Analysis Wing"
+  wing_role: "Generate primary reasoning."
+  output_summary: "The proposed output appears usable as limited advisory reasoning."
+  confidence: "medium"
+  status: "completed"
+
+* wing_id: "counter_analysis"
+  wing_name: "Counter-Analysis Wing"
+  wing_role: "Challenge assumptions and identify weaknesses."
+  output_summary: "The output may be mistaken for final authority unless advisory status is explicit."
+  confidence: "medium"
+  status: "completed"
+
+* wing_id: "evidence_review"
+  wing_name: "Evidence Review Wing"
+  wing_role: "Evaluate evidence sufficiency."
+  output_summary: "Evidence is sufficient for example-level demonstration but insufficient for production deployment."
+  confidence: "medium"
+  status: "completed"
+
+* wing_id: "risk_review"
+  wing_name: "Risk Review Wing"
+  wing_role: "Identify reasoning-stability and deployment risks."
+  output_summary: "Risk is acceptable only if the output remains advisory and human review is required."
+  confidence: "high"
+  status: "completed"
+
+* wing_id: "value_review"
+  wing_name: "Value Review Wing"
+  wing_role: "Evaluate value and human-impact concerns."
+  output_summary: "No blocking value conflict is detected in this example context."
+  confidence: "medium"
+  status: "completed"
+
+* wing_id: "governance_review"
+  wing_name: "Governance Review Wing"
+  wing_role: "Check governance boundaries and escalation requirements."
+  output_summary: "Human review is required before any real-world decision or deployment."
+  confidence: "high"
+  status: "completed"
+
+conflicts:
+
+* conflict_id: "conflict-001"
+  conflict_type: "human_authority_boundary"
+  severity: "medium"
+  description: "The advisory output could be misinterpreted as a final decision if authority boundaries are not explicit."
+  detected_at_event: "event-006"
+  affected_wings:
+
+  * "analysis"
+  * "counter_analysis"
+  * "risk_review"
+  * "governance_review"
+    status: "bounded"
+    resolution:
+    resolution_id: "resolution-001"
+    resolution_type: "advisory_label_and_human_review"
+    description: "The output must be labeled advisory only and routed to human review before real-world action."
+    resolved_at_event: "event-007"
+    remaining_risk: "low_to_medium"
+
+convergence_window:
+window_id: "cw-001"
+window_type: "multi_wing_cycle_based"
+cycle_count: 3
+evaluated_wings:
+- "analysis"
+- "counter_analysis"
+- "evidence_review"
+- "risk_review"
+- "value_review"
+- "governance_review"
+convergence_status: "provisionally_converged"
+confidence_summary: "medium"
+resolved_conflicts:
+- "conflict-001"
+unresolved_conflicts: []
+unresolved_assumptions:
+- "Production deployment context is not assessed."
+false_convergence_check:
+performed: true
+result: "no_false_convergence_detected_within_example_scope"
+escalation_required: true
+human_review_required: true
+final_reasoning_state: "escalated"
+
+oscillation_check:
+oscillation_check_id: "osc-check-001"
+performed: true
+oscillation_detected: false
+detection_methods:
+- "wing_output_comparison"
+- "cycle_status_review"
+- "conflict_count_check"
+- "escalation_status_check"
+thresholds:
+maximum_cycle_count: 4
+maximum_unresolved_conflicts: 2
+maximum_escalation_reversals: 1
+observed_values:
+cycle_count: 3
+unresolved_conflicts: 0
+escalation_reversals: 0
+response_action: "no_oscillation_response_required"
+forced_convergence_prevented: true
+
+value_assessment:
+value_assessment_id: "value-001"
+performed: true
+assessment_type: "manual_example_review"
+criteria:
+- "safety"
+- "user_autonomy"
+- "misuse_prevention"
+- "explainability"
+- "human_impact"
+result: "passed_with_limitations"
+value_conflicts_detected: false
+limitations:
+- "Value assessment is illustrative and not domain-specific."
+- "No real-world stakeholder impact assessment is performed."
+
+governance_review:
+governance_review_id: "gov-001"
+performed: true
+governance_boundary_defined: true
+risk_classification: "medium"
+permitted_use:
+- "research documentation"
+- "advisory reasoning-stability demonstration"
+- "non-production evaluation"
+prohibited_use:
+- "automated high-impact decision-making"
+- "final legal, medical, financial, or safety decisions"
+- "deployment without human review"
+escalation_triggers:
+- "unstable_reasoning"
+- "persistent_oscillation"
+- "unresolved_value_conflict"
+- "human_authority_required"
+- "high_impact_context"
+escalation_required: true
+governance_status: "review_required_before_action"
+
+human_authority:
+human_authority_id: "hal-001"
+required: true
+authority_type: "final_approval"
+reviewer_role: "human_reviewer"
+ai_output_status: "advisory_only"
+override_allowed: true
+decision_record_required: true
+final_human_decision:
+status: "not_recorded"
+note: "This example records the requirement for human review, not the completed human decision."
+
+final_status:
+final_status_id: "final-001"
+stability_state: "escalated"
+output_permission: "limited_advisory_output_only"
+final_output_allowed: false
+human_review_required: true
+rejection_required: false
+summary: "The reasoning cycle is provisionally converged but escalated because human review is required before any real-world action."
+
+trace_integrity:
+protected_against_modification: false
+access_control_defined: false
+retention_policy_defined: false
+note: "This is an illustrative example only. Production or governed deployments should define trace integrity, access control, and retention policies."
+
+claim_boundaries:
+official_standard_claimed: false
+certification_claimed: false
+legal_compliance_claimed: false
+safety_guarantee_claimed: false
+production_readiness_claimed: false
+complete_traceability_claimed: false
+notes:
+- "This trace record is illustrative."
+- "It does not include private chain-of-thought."
+- "It does not represent an official audit record."
+- "It does not provide certification or legal compliance."
+
+known_limitations:
+
+* "This example is not based on a deployed system."
+* "Trace integrity controls are not implemented."
+* "Access control is not implemented."
+* "Retention policy is not implemented."
+* "Human final decision is not recorded."
+* "No external audit is performed."
+* "No official certification is claimed."
+
+related_requirements:
+
+* requirement_id: "ARSS-TR-001"
+  requirement_name: "Trace Scope"
+  status: "addressed"
+  evidence: "trace_scope section defines included and excluded trace items."
+
+* requirement_id: "ARSS-TR-002"
+  requirement_name: "Trace Record"
+  status: "addressed"
+  evidence: "trace_record and trace_events sections are present."
+
+* requirement_id: "ARSS-TR-003"
+  requirement_name: "Assumption Traceability"
+  status: "addressed"
+  evidence: "task_frame.assumptions are recorded."
+
+* requirement_id: "ARSS-TR-004"
+  requirement_name: "Conflict Traceability"
+  status: "addressed"
+  evidence: "conflicts section records conflict-001."
+
+* requirement_id: "ARSS-TR-005"
+  requirement_name: "Review Traceability"
+  status: "partially_addressed"
+  evidence: "governance and human review requirement are recorded, but final human decision is not recorded."
+
+* requirement_id: "ARSS-TR-006"
+  requirement_name: "Trace Integrity"
+  status: "not_addressed"
+  evidence: "trace_integrity section states that protection is not implemented."
+
+* requirement_id: "ARSS-HAL-001"
+  requirement_name: "Human Authority Boundary"
+  status: "addressed"
+  evidence: "human_authority section defines advisory-only AI output status."
+
+review:
+review_status: "example_complete"
+next_steps:
+- "Create examples/requirement-mapping.example.yaml."
+- "Create schemas/trace-record.schema.json if machine validation is required."
+- "Add validation script after schemas are added."
