@@ -60,19 +60,19 @@ VALIDATION_TARGETS = [
 ]
 
 def load_yaml(path):
-"""Load a YAML file."""
-with path.open("r", encoding="utf-8") as file:
-return yaml.safe_load(file)
+    """Load a YAML file."""
+    with path.open("r", encoding="utf-8") as file:
+    return yaml.safe_load(file)
 
 def load_json(path):
-"""Load a JSON file."""
-with path.open("r", encoding="utf-8") as file:
-return json.load(file)
+    """Load a JSON file."""
+    with path.open("r", encoding="utf-8") as file:
+    return json.load(file)
 
 def format_error_path(error):
-"""Return a readable JSON path for a validation error."""
-if not error.absolute_path:
-return "$"
+   """Return a readable JSON path for a validation error."""
+   if not error.absolute_path:
+   return "$"
 
 ```
 parts = ["$"]
@@ -87,11 +87,11 @@ return "".join(parts)
 ```
 
 def validate_file(example_path, schema_path):
-"""Validate one example file against one schema file."""
+    """Validate one example file against one schema file."""
 try:
-data = load_yaml(example_path)
+    data = load_yaml(example_path)
 except Exception as exc:
-return [f"Failed to load YAML: {example_path}\n  {exc}"]
+    return [f"Failed to load YAML: {example_path}\n  {exc}"]
 
 ```
 try:
@@ -121,10 +121,10 @@ return errors
 ```
 
 def main():
-"""Run all validations."""
-print("ARSS-WD0 example validation")
-print(f"Repository root: {REPO_ROOT}")
-print("")
+    """Run all validations."""
+    print("ARSS-WD0 example validation")
+    print(f"Repository root: {REPO_ROOT}")
+    print("")
 
 ```
 total_errors = 0
