@@ -5,23 +5,16 @@ Validate ARSS-WD0 example YAML files against JSON Schema files.
 Repository:
 ai-reasoning-stability-standard-wd0
 
-Purpose:
-Validate machine-readable examples in the examples/ directory using schemas
-in the schemas/ directory.
-
 Required Python packages:
 
 * PyYAML
 * jsonschema
 
-Install:
-pip install pyyaml jsonschema
-
 Usage:
 python scripts/validate_examples.py
 """
 
-from __future__ import annotations
+from **future** import annotations
 
 import json
 import sys
@@ -89,6 +82,7 @@ return "$"
 
 ```
 parts: list[str] = ["$"]
+
 for part in error.absolute_path:
     if isinstance(part, int):
         parts.append(f"[{part}]")
@@ -100,17 +94,15 @@ return "".join(parts)
 
 def validate_file(example_path: Path, schema_path: Path) -> list[str]:
 """Validate one example file against one schema file."""
-errors: list[str] = []
+try:
+data = load_yaml(example_path)
+except Exception as exc:
+return [f"Failed to load YAML: {example_path}\n  {exc}"]
 
 ```
 try:
-    data = load_yaml(example_path)
-except Exception as exc:  # noqa: BLE001
-    return [f"Failed to load YAML: {example_path}\n  {exc}"]
-
-try:
     schema = load_json(schema_path)
-except Exception as exc:  # noqa: BLE001
+except Exception as exc:
     return [f"Failed to load JSON Schema: {schema_path}\n  {exc}"]
 
 try:
@@ -124,6 +116,8 @@ validation_errors = sorted(
     validator.iter_errors(data),
     key=lambda err: list(err.absolute_path),
 )
+
+errors: list[str] = []
 
 for error in validation_errors:
     path = format_error_path(error)
@@ -154,23 +148,27 @@ for target in VALIDATION_TARGETS:
 
     if not example_path.exists():
         message = f"Example file not found: {example_path}"
+
         if required:
             print(f"  ERROR: {message}")
             total_errors += 1
         else:
             print(f"  SKIP: {message}")
             skipped += 1
+
         print("")
         continue
 
     if not schema_path.exists():
         message = f"Schema file not found: {schema_path}"
+
         if required:
             print(f"  ERROR: {message}")
             total_errors += 1
         else:
             print(f"  SKIP: {message}")
             skipped += 1
+
         print("")
         continue
 
@@ -202,3 +200,4 @@ return 0
 
 if **name** == "**main**":
 raise SystemExit(main())
+
