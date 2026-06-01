@@ -186,7 +186,7 @@ print("")
 print("All available example validations passed.")
 return 0
 
-if **name** == "**main**":
-sys.exit(main())
+if __name__ == "__main__":
+    sys.exit(main())
 
 
