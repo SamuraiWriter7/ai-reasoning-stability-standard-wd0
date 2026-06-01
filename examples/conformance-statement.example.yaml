@@ -1,0 +1,369 @@
+standard: "AI Reasoning Stability Standard"
+standard_version: "WD0"
+document_type: "conformance_statement_example"
+example_id: "conformance-statement-example-001"
+date: "2026-05-31"
+status: "example"
+
+metadata:
+repository: "ai-reasoning-stability-standard-wd0"
+file: "examples/conformance-statement.example.yaml"
+purpose: "Example machine-readable conformance statement for ARSS-WD0."
+claim_type: "illustrative_example"
+official_certification: false
+legal_compliance_claimed: false
+safety_guarantee_claimed: false
+
+conformance_statement:
+statement_id: "arss-conformance-001"
+standard: "AI Reasoning Stability Standard"
+version: "WD0"
+profile: "Profile A: Documentation Alignment"
+claim_type: "self_declared"
+assessment_date: "2026-05-31"
+assessor: "project_maintainer"
+review_status: "example_only"
+
+system:
+system_name: "Example AI Reasoning Stability Repository"
+system_version: "0.1.0"
+repository_or_documentation: "https://github.com/example/example-ai-reasoning-system"
+deployment_context: "research_documentation_repository"
+deployment_status: "non_production"
+intended_use:
+- "reasoning-stability documentation"
+- "architecture review"
+- "standardization-oriented discussion"
+- "conformance profile demonstration"
+excluded_use:
+- "medical decision-making"
+- "legal decision-making"
+- "financial approval"
+- "critical infrastructure control"
+- "military or defense use"
+- "fully automated high-impact decision-making"
+
+scope:
+covered_reasoning_tasks:
+- "documentation of reasoning-stability architecture"
+- "documentation of task framing"
+- "documentation of convergence-window concepts"
+- "documentation of oscillation-control concepts"
+- "documentation of human authority boundaries"
+excluded_reasoning_tasks:
+- "production AI deployment"
+- "real-time autonomous decision-making"
+- "high-impact decision automation"
+- "domain-specific compliance assessment"
+risk_context: "low"
+scope_notes:
+- "This example covers documentation alignment only."
+- "No deployed system behavior is assessed."
+- "No official certification is claimed."
+
+claimed_profile:
+profile_id: "Profile A"
+profile_name: "Documentation Alignment"
+profile_description: "Documentation-level alignment with ARSS-WD0 concepts, claim boundaries, terminology, and architecture."
+profile_limitations:
+- "Does not claim implemented controls."
+- "Does not claim governed deployment."
+- "Does not claim audit-ready traceability."
+- "Does not claim legal compliance."
+- "Does not claim complete AI safety."
+
+profile_a_documentation_alignment:
+scope_declaration:
+present: true
+evidence:
+- "README.md"
+- "docs/claim-boundaries.md"
+reasoning_stability_objective:
+present: true
+evidence:
+- "README.md"
+- "standard/ai-reasoning-stability-standard-wd0.md"
+architecture_documentation:
+present: true
+evidence:
+- "docs/architecture-model.md"
+- "annex/annex-a-architecture-diagram.md"
+terminology:
+present: true
+evidence:
+- "docs/terminology.md"
+requirements:
+present: true
+evidence:
+- "docs/requirements.md"
+conformance_model:
+present: true
+evidence:
+- "docs/conformance.md"
+claim_boundaries:
+present: true
+evidence:
+- "docs/claim-boundaries.md"
+use_cases:
+present: true
+evidence:
+- "annex/annex-b-use-cases.md"
+external_mapping:
+present: true
+evidence:
+- "annex/annex-c-mapping-to-existing-standards.md"
+examples:
+present: true
+evidence:
+- "examples/stability-assessment.example.yaml"
+- "examples/conformance-statement.example.yaml"
+
+profile_b_structural_implementation_alignment:
+claimed: false
+reason: "This example does not assess implemented reasoning-stability controls."
+missing_evidence:
+- "operational task-framing implementation"
+- "implemented multi-wing reasoning workflow"
+- "implemented convergence-window evaluation"
+- "implemented oscillation detection"
+- "implemented trace records"
+- "implemented human review workflow"
+
+profile_c_governed_deployment_alignment:
+claimed: false
+reason: "This example does not assess governed deployment."
+missing_evidence:
+- "formal governance process"
+- "audit-ready traceability"
+- "human final authority records"
+- "trace integrity controls"
+- "change-control records"
+- "access-control policy"
+- "deployment review records"
+
+human_authority_boundary:
+defined: true
+ai_output_status: "advisory_only"
+final_human_authority_required_for:
+- "real-world deployment"
+- "high-impact decision-making"
+- "legal, medical, financial, or safety-relevant use"
+- "production use"
+evidence:
+- "docs/architecture-model.md"
+- "docs/requirements.md"
+- "docs/conformance.md"
+notes:
+- "AI-generated reasoning should not be represented as final human authority."
+- "This example does not include a final human approval record."
+
+traceability_scope:
+defined: true
+traceability_level: "documentation_level"
+included_trace_types:
+- "documented architecture"
+- "documented requirements"
+- "documented conformance profiles"
+- "documented claim boundaries"
+- "example stability assessment"
+excluded_trace_types:
+- "production system logs"
+- "runtime reasoning traces"
+- "audit-ready trace records"
+- "human decision records"
+evidence:
+- "examples/stability-assessment.example.yaml"
+
+governance_process:
+defined: true
+governance_level: "repository_documentation_governance"
+governance_controls:
+- "version control"
+- "claim boundary documentation"
+- "changelog maintenance"
+- "citation metadata"
+- "license declaration"
+evidence:
+- "CHANGELOG.md"
+- "CITATION.cff"
+- "LICENSE"
+- "docs/claim-boundaries.md"
+limitations:
+- "No organizational governance board is assessed."
+- "No deployment approval process is assessed."
+
+value_assessment:
+defined: true
+value_criteria:
+- "safety"
+- "human authority"
+- "traceability"
+- "governance"
+- "avoidance of overclaiming"
+- "reviewability"
+evidence:
+- "docs/requirements.md"
+- "docs/architecture-model.md"
+limitations:
+- "No domain-specific value assessment is performed."
+- "No stakeholder impact assessment is performed."
+
+requirement_mapping_summary:
+mapping_status: "summary_level"
+full_mapping_file: "examples/requirement-mapping.example.yaml"
+profile_a_core_requirements:
+- requirement_id: "ARSS-GEN-001"
+requirement_name: "Scope Declaration"
+status: "addressed"
+evidence:
+- "README.md"
+- "docs/claim-boundaries.md"
+
+```
+- requirement_id: "ARSS-GEN-002"
+  requirement_name: "Stability Objective"
+  status: "addressed"
+  evidence:
+    - "README.md"
+    - "standard/ai-reasoning-stability-standard-wd0.md"
+
+- requirement_id: "ARSS-GEN-003"
+  requirement_name: "Risk Context"
+  status: "addressed"
+  evidence:
+    - "docs/requirements.md"
+    - "docs/conformance.md"
+
+- requirement_id: "ARSS-GEN-005"
+  requirement_name: "Claim Boundary Declaration"
+  status: "addressed"
+  evidence:
+    - "docs/claim-boundaries.md"
+
+- requirement_id: "ARSS-FRM-001"
+  requirement_name: "Task Frame Definition"
+  status: "addressed"
+  evidence:
+    - "docs/architecture-model.md"
+    - "examples/stability-assessment.example.yaml"
+
+- requirement_id: "ARSS-MW-001"
+  requirement_name: "Wing Definition"
+  status: "addressed"
+  evidence:
+    - "docs/relationship-to-multi-wing.md"
+
+- requirement_id: "ARSS-CW-001"
+  requirement_name: "Convergence Window Definition"
+  status: "addressed"
+  evidence:
+    - "docs/relationship-to-convergence-window.md"
+
+- requirement_id: "ARSS-OC-001"
+  requirement_name: "Oscillation Definition"
+  status: "addressed"
+  evidence:
+    - "docs/relationship-to-oscillation-control.md"
+
+- requirement_id: "ARSS-TR-001"
+  requirement_name: "Trace Scope"
+  status: "addressed"
+  evidence:
+    - "docs/requirements.md"
+    - "examples/stability-assessment.example.yaml"
+
+- requirement_id: "ARSS-VA-001"
+  requirement_name: "Value Criteria Definition"
+  status: "addressed"
+  evidence:
+    - "docs/requirements.md"
+
+- requirement_id: "ARSS-GOV-001"
+  requirement_name: "Governance Boundary"
+  status: "addressed"
+  evidence:
+    - "docs/requirements.md"
+    - "docs/conformance.md"
+
+- requirement_id: "ARSS-HAL-001"
+  requirement_name: "Human Authority Boundary"
+  status: "addressed"
+  evidence:
+    - "docs/architecture-model.md"
+    - "docs/requirements.md"
+
+- requirement_id: "ARSS-CONF-001"
+  requirement_name: "Conformance Profile Declaration"
+  status: "addressed"
+  evidence:
+    - "docs/conformance.md"
+    - "examples/conformance-statement.example.yaml"
+
+- requirement_id: "ARSS-CONF-006"
+  requirement_name: "No Certification Misrepresentation"
+  status: "addressed"
+  evidence:
+    - "docs/claim-boundaries.md"
+    - "docs/conformance.md"
+```
+
+evidence:
+documentation:
+- path: "README.md"
+description: "Repository overview, scope, architecture summary, reading order, and claim posture."
+- path: "standard/ai-reasoning-stability-standard-wd0.md"
+description: "Main working draft document."
+- path: "docs/claim-boundaries.md"
+description: "Claim boundaries and non-claims."
+- path: "docs/architecture-model.md"
+description: "Layered reasoning-stability architecture."
+- path: "docs/requirements.md"
+description: "Preliminary ARSS requirement IDs."
+- path: "docs/conformance.md"
+description: "Conformance profiles and claim rules."
+- path: "docs/terminology.md"
+description: "Core terminology."
+- path: "annex/annex-a-architecture-diagram.md"
+description: "Architecture diagrams."
+- path: "annex/annex-b-use-cases.md"
+description: "Use cases."
+- path: "annex/annex-c-mapping-to-existing-standards.md"
+description: "Informative mapping to external standards and frameworks."
+examples:
+- path: "examples/stability-assessment.example.yaml"
+description: "Machine-readable stability assessment example."
+- path: "examples/conformance-statement.example.yaml"
+description: "Machine-readable conformance statement example."
+
+claim_boundaries:
+official_standard_claimed: false
+certification_claimed: false
+legal_compliance_claimed: false
+complete_ai_safety_claimed: false
+guaranteed_correctness_claimed: false
+universal_applicability_claimed: false
+production_readiness_claimed: false
+replacement_of_existing_standards_claimed: false
+notes:
+- "This is a self-declared Profile A example."
+- "This example does not represent official approval by any standards body."
+- "This example does not provide legal compliance or safety assurance."
+- "This example does not assess a deployed production system."
+
+known_limitations:
+
+* "This example is documentation-level only."
+* "No implemented reasoning-stability controls are assessed."
+* "No runtime trace records are included."
+* "No independent audit is performed."
+* "No external certification is claimed."
+* "No production deployment is assessed."
+* "No domain-specific legal, safety, or regulatory review is performed."
+
+review:
+review_status: "example_complete"
+next_steps:
+- "Create examples/trace-record.example.yaml."
+- "Create examples/requirement-mapping.example.yaml."
+- "Create schemas/conformance-statement.schema.json if machine validation is required."
+- "Create scripts/validate_examples.py after schemas are added."
