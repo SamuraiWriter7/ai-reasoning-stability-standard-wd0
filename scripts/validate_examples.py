@@ -21,7 +21,7 @@ Usage:
 python scripts/validate_examples.py
 """
 
-from **future** import annotations
+from __future__ import annotations
 
 import json
 import sys
