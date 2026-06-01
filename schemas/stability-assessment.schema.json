@@ -1,0 +1,883 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://github.com/SamuraiWriter7/ai-reasoning-stability-standard-wd0/schemas/stability-assessment.schema.json",
+"title": "AI Reasoning Stability Standard - Stability Assessment Schema",
+"description": "JSON Schema for validating ARSS-WD0 stability assessment records.",
+"type": "object",
+"additionalProperties": true,
+"required": [
+"standard",
+"standard_version",
+"document_type",
+"example_id",
+"date",
+"status",
+"metadata",
+"assessment",
+"system",
+"task_frame",
+"architecture_layers",
+"multi_wing_reasoning",
+"convergence_window",
+"oscillation_control",
+"traceability",
+"value_assessment",
+"governance",
+"human_authority",
+"final_status",
+"claim_boundaries",
+"known_limitations"
+],
+"properties": {
+"standard": {
+"type": "string",
+"const": "AI Reasoning Stability Standard"
+},
+"standard_version": {
+"type": "string",
+"description": "The ARSS version used by the assessment.",
+"examples": [
+"WD0"
+]
+},
+"document_type": {
+"type": "string",
+"const": "stability_assessment_example"
+},
+"example_id": {
+"type": "string",
+"minLength": 1
+},
+"date": {
+"type": "string",
+"format": "date"
+},
+"status": {
+"type": "string",
+"enum": [
+"draft",
+"example",
+"review",
+"final"
+]
+},
+"metadata": {
+"$ref": "#/$defs/metadata"
+},
+"assessment": {
+"$ref": "#/$defs/assessment"
+},
+"system": {
+"$ref": "#/$defs/system"
+},
+"task_frame": {
+"$ref": "#/$defs/task_frame"
+},
+"architecture_layers": {
+"$ref": "#/$defs/architecture_layers"
+},
+"multi_wing_reasoning": {
+"$ref": "#/$defs/multi_wing_reasoning"
+},
+"wing_integration": {
+"$ref": "#/$defs/wing_integration"
+},
+"convergence_window": {
+"$ref": "#/$defs/convergence_window"
+},
+"oscillation_control": {
+"$ref": "#/$defs/oscillation_control"
+},
+"traceability": {
+"$ref": "#/$defs/traceability"
+},
+"value_assessment": {
+"$ref": "#/$defs/value_assessment"
+},
+"governance": {
+"$ref": "#/$defs/governance"
+},
+"human_authority": {
+"$ref": "#/$defs/human_authority"
+},
+"final_status": {
+"$ref": "#/$defs/final_status"
+},
+"requirement_mapping": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/requirement_mapping_item"
+}
+},
+"claim_boundaries": {
+"$ref": "#/$defs/claim_boundaries"
+},
+"known_limitations": {
+"$ref": "#/$defs/string_array"
+},
+"review": {
+"$ref": "#/$defs/review"
+}
+},
+"$defs": {
+"metadata": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"repository",
+"file",
+"purpose",
+"claim_type",
+"official_certification"
+],
+"properties": {
+"repository": {
+"type": "string"
+},
+"file": {
+"type": "string"
+},
+"purpose": {
+"type": "string"
+},
+"claim_type": {
+"type": "string"
+},
+"official_certification": {
+"type": "boolean"
+}
+}
+},
+"assessment": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"assessment_id",
+"assessment_type",
+"assessment_date",
+"conformance_profile"
+],
+"properties": {
+"assessment_id": {
+"type": "string"
+},
+"assessment_type": {
+"type": "string"
+},
+"assessor": {
+"type": "string"
+},
+"assessment_date": {
+"type": "string",
+"format": "date"
+},
+"conformance_profile": {
+"type": "string"
+}
+}
+},
+"system": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"system_name",
+"system_version",
+"deployment_context",
+"deployment_status"
+],
+"properties": {
+"system_name": {
+"type": "string"
+},
+"system_version": {
+"type": "string"
+},
+"deployment_context": {
+"type": "string"
+},
+"deployment_status": {
+"type": "string"
+},
+"intended_use": {
+"$ref": "#/$defs/string_array"
+},
+"excluded_use": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"task_frame": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"task_id",
+"task_description",
+"risk_level",
+"expected_output",
+"human_review_required"
+],
+"properties": {
+"task_id": {
+"type": "string"
+},
+"task_description": {
+"type": "string"
+},
+"user_intent": {
+"type": "string"
+},
+"input_context": {
+"$ref": "#/$defs/string_array"
+},
+"known_constraints": {
+"$ref": "#/$defs/string_array"
+},
+"assumptions": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/assumption"
+}
+},
+"risk_level": {
+"$ref": "#/$defs/risk_level"
+},
+"expected_output": {
+"type": "string"
+},
+"human_review_required": {
+"type": "boolean"
+}
+}
+},
+"assumption": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"assumption_id",
+"description",
+"status"
+],
+"properties": {
+"assumption_id": {
+"type": "string"
+},
+"description": {
+"type": "string"
+},
+"status": {
+"type": "string"
+}
+}
+},
+"architecture_layers": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"task_framing": {
+"$ref": "#/$defs/layer_status"
+},
+"multi_wing_structural_autonomy": {
+"$ref": "#/$defs/layer_status"
+},
+"convergence_window_evaluation": {
+"$ref": "#/$defs/layer_status"
+},
+"oscillation_control": {
+"$ref": "#/$defs/layer_status"
+},
+"traceability": {
+"$ref": "#/$defs/layer_status"
+},
+"value_assessment": {
+"$ref": "#/$defs/layer_status"
+},
+"governance": {
+"$ref": "#/$defs/layer_status"
+},
+"human_authority": {
+"$ref": "#/$defs/layer_status"
+}
+}
+},
+"layer_status": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"present",
+"status"
+],
+"properties": {
+"present": {
+"type": "boolean"
+},
+"status": {
+"type": "string"
+}
+}
+},
+"multi_wing_reasoning": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"enabled",
+"wings"
+],
+"properties": {
+"enabled": {
+"type": "boolean"
+},
+"wings": {
+"type": "array",
+"minItems": 1,
+"items": {
+"$ref": "#/$defs/wing"
+}
+}
+}
+},
+"wing": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"wing_id",
+"wing_name",
+"wing_role",
+"output_summary"
+],
+"properties": {
+"wing_id": {
+"type": "string"
+},
+"wing_name": {
+"type": "string"
+},
+"wing_role": {
+"type": "string"
+},
+"output_summary": {
+"type": "string"
+},
+"confidence": {
+"$ref": "#/$defs/confidence_level"
+},
+"assumptions_used": {
+"$ref": "#/$defs/string_array"
+},
+"conflicts_detected": {
+"$ref": "#/$defs/string_array"
+},
+"limitations": {
+"$ref": "#/$defs/string_array"
+},
+"risks": {
+"$ref": "#/$defs/string_array"
+},
+"governance_status": {
+"type": "string"
+}
+}
+},
+"wing_integration": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"integration_method": {
+"type": "string"
+},
+"material_conflicts_detected": {
+"type": "boolean"
+},
+"conflicts": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/conflict"
+}
+},
+"integration_result": {
+"type": "string"
+}
+}
+},
+"conflict": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"conflict_id",
+"conflict_type",
+"description",
+"status"
+],
+"properties": {
+"conflict_id": {
+"type": "string"
+},
+"conflict_type": {
+"type": "string"
+},
+"description": {
+"type": "string"
+},
+"affected_wings": {
+"$ref": "#/$defs/string_array"
+},
+"resolution_status": {
+"type": "string"
+},
+"resolution": {
+"type": "string"
+},
+"status": {
+"type": "string"
+}
+}
+},
+"convergence_window": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"window_id",
+"window_type",
+"cycle_count",
+"evaluated_wings",
+"convergence_status",
+"escalation_required",
+"human_review_required",
+"final_reasoning_state"
+],
+"properties": {
+"window_id": {
+"type": "string"
+},
+"window_type": {
+"type": "string"
+},
+"cycle_count": {
+"type": "integer",
+"minimum": 0
+},
+"evaluated_wings": {
+"$ref": "#/$defs/string_array"
+},
+"convergence_criteria": {
+"$ref": "#/$defs/string_array"
+},
+"convergence_status": {
+"type": "string",
+"enum": [
+"converged",
+"provisionally_converged",
+"diverged",
+"oscillating",
+"unresolved",
+"escalated",
+"rejected"
+]
+},
+"confidence_summary": {
+"$ref": "#/$defs/confidence_level"
+},
+"resolved_conflicts": {
+"$ref": "#/$defs/string_array"
+},
+"unresolved_conflicts": {
+"$ref": "#/$defs/string_array"
+},
+"unresolved_assumptions": {
+"$ref": "#/$defs/string_array"
+},
+"false_convergence_check": {
+"$ref": "#/$defs/check_result"
+},
+"escalation_required": {
+"type": "boolean"
+},
+"human_review_required": {
+"type": "boolean"
+},
+"final_reasoning_state": {
+"$ref": "#/$defs/stability_state"
+}
+}
+},
+"oscillation_control": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"enabled",
+"detection_methods",
+"oscillation_detected",
+"response_action",
+"forced_convergence_prevented"
+],
+"properties": {
+"enabled": {
+"type": "boolean"
+},
+"oscillation_definition": {
+"$ref": "#/$defs/string_array"
+},
+"detection_methods": {
+"$ref": "#/$defs/string_array"
+},
+"thresholds": {
+"type": "object",
+"additionalProperties": {
+"type": [
+"integer",
+"number",
+"string",
+"boolean"
+]
+}
+},
+"oscillation_detected": {
+"type": "boolean"
+},
+"oscillation_events": {
+"type": "array",
+"items": {
+"type": "object",
+"additionalProperties": true
+}
+},
+"response_action": {
+"type": "string"
+},
+"forced_convergence_prevented": {
+"type": "boolean"
+}
+}
+},
+"traceability": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"trace_id",
+"trace_level",
+"trace_scope",
+"trace_events"
+],
+"properties": {
+"trace_id": {
+"type": "string"
+},
+"trace_level": {
+"type": "string",
+"enum": [
+"none",
+"summary",
+"detailed",
+"audit_ready"
+]
+},
+"trace_scope": {
+"$ref": "#/$defs/string_array"
+},
+"trace_events": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/trace_event"
+}
+},
+"trace_integrity": {
+"type": "object",
+"additionalProperties": true
+}
+}
+},
+"trace_event": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"event_id",
+"event_type",
+"status"
+],
+"properties": {
+"event_id": {
+"type": "string"
+},
+"event_type": {
+"type": "string"
+},
+"status": {
+"type": "string"
+},
+"related_conflict_id": {
+"type": "string"
+},
+"related_window_id": {
+"type": "string"
+},
+"oscillation_detected": {
+"type": "boolean"
+}
+}
+},
+"value_assessment": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"performed",
+"criteria",
+"result"
+],
+"properties": {
+"performed": {
+"type": "boolean"
+},
+"assessment_type": {
+"type": "string"
+},
+"criteria": {
+"$ref": "#/$defs/string_array"
+},
+"result": {
+"type": "string"
+},
+"value_conflicts_detected": {
+"type": "boolean"
+},
+"limitations": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"governance": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"governance_boundary_defined",
+"risk_classification",
+"escalation_required",
+"governance_status"
+],
+"properties": {
+"governance_boundary_defined": {
+"type": "boolean"
+},
+"permitted_use": {
+"$ref": "#/$defs/string_array"
+},
+"prohibited_use": {
+"$ref": "#/$defs/string_array"
+},
+"risk_classification": {
+"$ref": "#/$defs/risk_level"
+},
+"escalation_triggers": {
+"$ref": "#/$defs/string_array"
+},
+"escalation_required": {
+"type": "boolean"
+},
+"accountable_role": {
+"type": "string"
+},
+"governance_status": {
+"type": "string"
+}
+}
+},
+"human_authority": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"required",
+"authority_type",
+"ai_output_status",
+"decision_record_required"
+],
+"properties": {
+"required": {
+"type": "boolean"
+},
+"authority_type": {
+"type": "string"
+},
+"reviewer_role": {
+"type": "string"
+},
+"ai_output_status": {
+"type": "string",
+"enum": [
+"advisory_only",
+"requires_human_review",
+"approved_by_human",
+"rejected_by_human",
+"not_applicable"
+]
+},
+"override_allowed": {
+"type": "boolean"
+},
+"decision_record_required": {
+"type": "boolean"
+},
+"final_human_decision": {
+"type": "object",
+"additionalProperties": true
+}
+}
+},
+"final_status": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"stability_state",
+"output_permission",
+"final_output_allowed",
+"human_review_required",
+"rejection_required",
+"summary"
+],
+"properties": {
+"stability_state": {
+"$ref": "#/$defs/stability_state"
+},
+"output_permission": {
+"type": "string"
+},
+"final_output_allowed": {
+"type": "boolean"
+},
+"human_review_required": {
+"type": "boolean"
+},
+"rejection_required": {
+"type": "boolean"
+},
+"summary": {
+"type": "string"
+}
+}
+},
+"requirement_mapping_item": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"requirement_id",
+"status",
+"evidence"
+],
+"properties": {
+"requirement_id": {
+"type": "string",
+"pattern": "^ARSS-[A-Z]+-[0-9]{3}$"
+},
+"status": {
+"$ref": "#/$defs/requirement_status"
+},
+"evidence": {
+"type": "string"
+}
+}
+},
+"claim_boundaries": {
+"type": "object",
+"additionalProperties": true,
+"required": [
+"official_standard_claimed",
+"certification_claimed",
+"legal_compliance_claimed",
+"safety_guarantee_claimed",
+"production_readiness_claimed"
+],
+"properties": {
+"official_standard_claimed": {
+"type": "boolean",
+"const": false
+},
+"certification_claimed": {
+"type": "boolean",
+"const": false
+},
+"legal_compliance_claimed": {
+"type": "boolean",
+"const": false
+},
+"safety_guarantee_claimed": {
+"type": "boolean",
+"const": false
+},
+"production_readiness_claimed": {
+"type": "boolean",
+"const": false
+},
+"notes": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"review": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"review_status": {
+"type": "string"
+},
+"next_steps": {
+"$ref": "#/$defs/string_array"
+}
+}
+},
+"check_result": {
+"type": "object",
+"additionalProperties": true,
+"properties": {
+"performed": {
+"type": "boolean"
+},
+"result": {
+"type": "string"
+}
+}
+},
+"stability_state": {
+"type": "string",
+"enum": [
+"stable",
+"provisionally_stable",
+"unstable",
+"escalated",
+"rejected"
+]
+},
+"risk_level": {
+"type": "string",
+"enum": [
+"low",
+"medium",
+"high",
+"critical",
+"unspecified"
+]
+},
+"confidence_level": {
+"type": "string",
+"enum": [
+"low",
+"medium",
+"high",
+"unknown",
+"not_applicable"
+]
+},
+"requirement_status": {
+"type": "string",
+"enum": [
+"addressed",
+"partially_addressed",
+"not_addressed",
+"not_applicable",
+"planned"
+]
+},
+"string_array": {
+"type": "array",
+"items": {
+"type": "string"
+}
+}
+}
+}
