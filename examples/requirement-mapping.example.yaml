@@ -1,0 +1,1140 @@
+standard: "AI Reasoning Stability Standard"
+standard_version: "WD0"
+document_type: "requirement_mapping_example"
+example_id: "requirement-mapping-example-001"
+date: "2026-05-31"
+status: "example"
+
+metadata:
+repository: "ai-reasoning-stability-standard-wd0"
+file: "examples/requirement-mapping.example.yaml"
+purpose: "Example machine-readable requirement mapping for ARSS-WD0."
+claim_type: "illustrative_example"
+official_certification: false
+legal_compliance_claimed: false
+safety_guarantee_claimed: false
+
+mapping:
+mapping_id: "arss-requirement-mapping-001"
+mapping_type: "self_declared_requirement_mapping"
+mapped_standard: "AI Reasoning Stability Standard"
+mapped_version: "WD0"
+claimed_profile: "Profile A: Documentation Alignment"
+assessment_date: "2026-05-31"
+assessor: "project_maintainer"
+review_status: "example_only"
+
+system:
+system_name: "Example AI Reasoning Stability Repository"
+system_version: "0.1.0"
+repository_or_documentation: "https://github.com/example/example-ai-reasoning-system"
+deployment_context: "research_documentation_repository"
+deployment_status: "non_production"
+intended_use:
+- "reasoning-stability documentation"
+- "standardization-oriented discussion"
+- "architecture review"
+- "conformance mapping demonstration"
+excluded_use:
+- "medical decision-making"
+- "legal decision-making"
+- "financial approval"
+- "critical infrastructure control"
+- "military or defense use"
+- "fully automated high-impact decision-making"
+
+scope:
+covered_reasoning_tasks:
+- "documentation of AI reasoning stability architecture"
+- "documentation of Multi-Wing reasoning concepts"
+- "documentation of convergence-window evaluation concepts"
+- "documentation of oscillation-control concepts"
+- "documentation of traceability and human authority boundaries"
+excluded_reasoning_tasks:
+- "production AI deployment"
+- "real-time autonomous decision-making"
+- "high-impact automated decision-making"
+- "domain-specific regulatory compliance assessment"
+risk_context: "low"
+notes:
+- "This mapping is documentation-level only."
+- "No deployed system is assessed."
+- "No official certification is claimed."
+
+status_values:
+allowed:
+- "addressed"
+- "partially_addressed"
+- "not_addressed"
+- "not_applicable"
+- "planned"
+definitions:
+addressed: "Evidence exists showing that the requirement is satisfied within the declared scope."
+partially_addressed: "The requirement is partly satisfied, but limitations or gaps remain."
+not_addressed: "The requirement is applicable but not satisfied."
+not_applicable: "The requirement does not apply within the declared scope."
+planned: "The requirement is intended for future work."
+
+requirement_mapping_summary:
+total_requirements_mapped: 49
+addressed: 30
+partially_addressed: 8
+not_addressed: 5
+not_applicable: 3
+planned: 3
+profile_a_readiness: "substantially_addressed"
+profile_b_readiness: "partial"
+profile_c_readiness: "not_claimed"
+
+requirement_categories:
+
+* category_id: "ARSS-GEN"
+  category_name: "General Requirements"
+  status_summary: "mostly_addressed"
+
+* category_id: "ARSS-FRM"
+  category_name: "Task Framing Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-MW"
+  category_name: "Multi-Wing Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-CW"
+  category_name: "Convergence Window Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-OC"
+  category_name: "Oscillation Control Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-TR"
+  category_name: "Traceability Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-VA"
+  category_name: "Value Assessment Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-GOV"
+  category_name: "Governance Requirements"
+  status_summary: "partially_addressed"
+
+* category_id: "ARSS-HAL"
+  category_name: "Human Authority Requirements"
+  status_summary: "mostly_addressed"
+
+* category_id: "ARSS-CONF"
+  category_name: "Conformance Requirements"
+  status_summary: "mostly_addressed"
+
+* category_id: "ARSS-DOC"
+  category_name: "Documentation Requirements"
+  status_summary: "mostly_addressed"
+
+* category_id: "ARSS-CHG"
+  category_name: "Change-Control Requirements"
+  status_summary: "partially_addressed"
+
+requirements:
+
+* id: "ARSS-GEN-001"
+  name: "Scope Declaration"
+  category: "ARSS-GEN"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "Defines repository scope and non-claims."
+  * path: "docs/claim-boundaries.md"
+    note: "Defines claim scope and unsupported claims."
+    limitations: []
+
+* id: "ARSS-GEN-002"
+  name: "Stability Objective"
+  category: "ARSS-GEN"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "Defines the core concept of AI reasoning stability."
+  * path: "standard/ai-reasoning-stability-standard-wd0.md"
+    note: "Defines purpose and stability model."
+    limitations: []
+
+* id: "ARSS-GEN-003"
+  name: "Risk Context"
+  category: "ARSS-GEN"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/requirements.md"
+    note: "Defines risk context requirement."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes risk_level field."
+    limitations:
+  * "Risk model is preliminary."
+
+* id: "ARSS-GEN-004"
+  name: "Reasoning State Classification"
+  category: "ARSS-GEN"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "standard/ai-reasoning-stability-standard-wd0.md"
+    note: "Defines stable, provisionally stable, unstable, escalated, and rejected states."
+  * path: "docs/terminology.md"
+    note: "Defines reasoning-state terminology."
+    limitations: []
+
+* id: "ARSS-GEN-005"
+  name: "Claim Boundary Declaration"
+  category: "ARSS-GEN"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/claim-boundaries.md"
+    note: "Defines supported and unsupported claims."
+  * path: "README.md"
+    note: "Includes non-claims section."
+    limitations: []
+
+* id: "ARSS-FRM-001"
+  name: "Task Frame Definition"
+  category: "ARSS-FRM"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/architecture-model.md"
+    note: "Defines Input, Context, and Task Framing Layer."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes task_frame section."
+  * path: "examples/trace-record.example.yaml"
+    note: "Records task frame in trace."
+    limitations: []
+
+* id: "ARSS-FRM-002"
+  name: "Assumption Declaration"
+  category: "ARSS-FRM"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes declared assumptions."
+  * path: "examples/trace-record.example.yaml"
+    note: "Records assumptions as traceable items."
+    limitations:
+  * "Assumption declaration is example-level only."
+
+* id: "ARSS-FRM-003"
+  name: "Boundary Conditions"
+  category: "ARSS-FRM"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/requirements.md"
+    note: "Defines boundary conditions requirement."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines included and excluded uses."
+    limitations: []
+
+* id: "ARSS-FRM-004"
+  name: "Risk-Based Framing"
+  category: "ARSS-FRM"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes risk_level and human_review_required."
+    limitations:
+  * "No detailed risk-based framing procedure is defined yet."
+
+* id: "ARSS-FRM-005"
+  name: "Out-of-Scope Handling"
+  category: "ARSS-FRM"
+  level: "Core"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "Defines non-claims and excluded areas."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Lists excluded reasoning tasks."
+    limitations:
+  * "Operational out-of-scope handling procedure is not implemented."
+
+* id: "ARSS-MW-001"
+  name: "Wing Definition"
+  category: "ARSS-MW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-multi-wing.md"
+    note: "Defines wing roles and examples."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes multi_wing_reasoning.wings."
+    limitations: []
+
+* id: "ARSS-MW-002"
+  name: "Wing Separation"
+  category: "ARSS-MW"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-multi-wing.md"
+    note: "Explains functional separation of wings."
+  * path: "docs/architecture-model.md"
+    note: "Defines Multi-Wing Structural Autonomy Layer."
+    limitations:
+  * "No runtime enforcement example is provided."
+
+* id: "ARSS-MW-003"
+  name: "Wing Integration"
+  category: "ARSS-MW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-multi-wing.md"
+    note: "Defines integration methods."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes wing_integration section."
+    limitations: []
+
+* id: "ARSS-MW-004"
+  name: "Conflict Detection"
+  category: "ARSS-MW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Records a material conflict."
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes conflict_detected trace event."
+    limitations: []
+
+* id: "ARSS-MW-005"
+  name: "Conflict Handling"
+  category: "ARSS-MW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes conflict_bounded event and resolution."
+    limitations:
+  * "Only one example conflict-handling pattern is shown."
+
+* id: "ARSS-MW-006"
+  name: "Single-Path Dependency Reduction"
+  category: "ARSS-MW"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/relationship-to-multi-wing.md"
+    note: "Explains reduction of single-path dependency."
+    limitations:
+  * "No quantitative evaluation is defined."
+
+* id: "ARSS-MW-007"
+  name: "Wing Output Traceability"
+  category: "ARSS-MW"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes wing_outputs section."
+    limitations:
+  * "Trace is summary-level only."
+
+* id: "ARSS-CW-001"
+  name: "Convergence Window Definition"
+  category: "ARSS-CW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-convergence-window.md"
+    note: "Defines convergence window."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes convergence_window section."
+    limitations: []
+
+* id: "ARSS-CW-002"
+  name: "Convergence Criteria"
+  category: "ARSS-CW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Lists convergence criteria."
+    limitations:
+  * "Criteria are example-level and not domain-specific."
+
+* id: "ARSS-CW-003"
+  name: "Provisional Convergence Criteria"
+  category: "ARSS-CW"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/relationship-to-convergence-window.md"
+    note: "Defines provisionally converged state."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Uses provisionally_converged status."
+    limitations:
+  * "No formal threshold is defined."
+
+* id: "ARSS-CW-004"
+  name: "Divergence Criteria"
+  category: "ARSS-CW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-convergence-window.md"
+    note: "Defines divergence criteria."
+    limitations:
+  * "No divergence example file is provided yet."
+
+* id: "ARSS-CW-005"
+  name: "Single Output Limitation"
+  category: "ARSS-CW"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "States that final outputs alone are insufficient."
+  * path: "docs/relationship-to-convergence-window.md"
+    note: "Explains single-output stability limitation."
+    limitations: []
+
+* id: "ARSS-CW-006"
+  name: "Convergence Record"
+  category: "ARSS-CW"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes convergence_window record."
+    limitations:
+  * "No separate convergence-window example file is provided yet."
+
+* id: "ARSS-CW-007"
+  name: "False Convergence Handling"
+  category: "ARSS-CW"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/relationship-to-convergence-window.md"
+    note: "Defines false convergence."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes false_convergence_check."
+    limitations:
+  * "No operational false-convergence test procedure is defined."
+
+* id: "ARSS-OC-001"
+  name: "Oscillation Definition"
+  category: "ARSS-OC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-oscillation-control.md"
+    note: "Defines oscillation and oscillation types."
+  * path: "docs/terminology.md"
+    note: "Defines oscillation terms."
+    limitations: []
+
+* id: "ARSS-OC-002"
+  name: "Oscillation Detection"
+  category: "ARSS-OC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Lists oscillation detection methods."
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes oscillation_check."
+    limitations:
+  * "Detection is illustrative, not implemented in code."
+
+* id: "ARSS-OC-003"
+  name: "Oscillation Threshold"
+  category: "ARSS-OC"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Defines example thresholds."
+    limitations:
+  * "Thresholds are not empirically validated."
+
+* id: "ARSS-OC-004"
+  name: "Oscillation Response"
+  category: "ARSS-OC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-oscillation-control.md"
+    note: "Defines possible response actions."
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes response_action."
+    limitations: []
+
+* id: "ARSS-OC-005"
+  name: "Forced Convergence Limitation"
+  category: "ARSS-OC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/relationship-to-oscillation-control.md"
+    note: "Defines forced convergence limitation."
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes forced_convergence_prevented."
+    limitations: []
+
+* id: "ARSS-OC-006"
+  name: "Oscillation Trace"
+  category: "ARSS-OC"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes oscillation_check."
+    limitations:
+  * "No separate oscillation-event example file is provided yet."
+
+* id: "ARSS-OC-007"
+  name: "Human Escalation for Persistent Oscillation"
+  category: "ARSS-OC"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/relationship-to-oscillation-control.md"
+    note: "Defines human escalation triggers."
+    limitations:
+  * "No persistent oscillation example is provided."
+
+* id: "ARSS-TR-001"
+  name: "Trace Scope"
+  category: "ARSS-TR"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Defines trace_scope included and excluded items."
+    limitations: []
+
+* id: "ARSS-TR-002"
+  name: "Trace Record"
+  category: "ARSS-TR"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Provides full trace_record example."
+    limitations:
+  * "Trace is illustrative and not audit-ready."
+
+* id: "ARSS-TR-003"
+  name: "Assumption Traceability"
+  category: "ARSS-TR"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Records assumptions in task_frame."
+    limitations: []
+
+* id: "ARSS-TR-004"
+  name: "Conflict Traceability"
+  category: "ARSS-TR"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Records conflict-001 and related events."
+    limitations: []
+
+* id: "ARSS-TR-005"
+  name: "Review Traceability"
+  category: "ARSS-TR"
+  level: "Core"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Records governance review and human review requirement."
+    limitations:
+  * "Final human decision record is not included."
+
+* id: "ARSS-TR-006"
+  name: "Trace Integrity"
+  category: "ARSS-TR"
+  level: "Governed"
+  status: "not_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Explicitly states trace integrity is not implemented."
+    limitations:
+  * "No trace integrity mechanism is provided."
+
+* id: "ARSS-TR-007"
+  name: "Trace Minimization"
+  category: "ARSS-TR"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Excludes private chain-of-thought, model weights, internal activations, and PII."
+    limitations:
+  * "No formal privacy or data-minimization policy is provided."
+
+* id: "ARSS-TR-008"
+  name: "Trace Accessibility"
+  category: "ARSS-TR"
+  level: "Governed"
+  status: "not_addressed"
+  evidence: []
+  limitations:
+
+  * "No access-control policy is provided."
+
+* id: "ARSS-VA-001"
+  name: "Value Criteria Definition"
+  category: "ARSS-VA"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Lists value criteria."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines value criteria for documentation alignment."
+    limitations: []
+
+* id: "ARSS-VA-002"
+  name: "Value Assessment Separation"
+  category: "ARSS-VA"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/architecture-model.md"
+    note: "Defines Value Assessment Layer separately."
+    limitations:
+  * "No implemented separation is assessed."
+
+* id: "ARSS-VA-003"
+  name: "Value Conflict Detection"
+  category: "ARSS-VA"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes value_conflicts_detected field."
+    limitations:
+  * "No detailed value-conflict detection procedure is provided."
+
+* id: "ARSS-VA-004"
+  name: "Value Conflict Response"
+  category: "ARSS-VA"
+  level: "Core"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/requirements.md"
+    note: "Defines response options for value conflicts."
+    limitations:
+  * "No value-conflict example is provided."
+
+* id: "ARSS-VA-005"
+  name: "Value Assessment Record"
+  category: "ARSS-VA"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes value_assessment section."
+    limitations:
+  * "Record is illustrative and not governance-audited."
+
+* id: "ARSS-GOV-001"
+  name: "Governance Boundary"
+  category: "ARSS-GOV"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines governance process and boundaries."
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes governance_review section."
+    limitations: []
+
+* id: "ARSS-GOV-002"
+  name: "Risk Classification"
+  category: "ARSS-GOV"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes risk_level."
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes risk_classification."
+    limitations:
+  * "Risk classification is simple and preliminary."
+
+* id: "ARSS-GOV-003"
+  name: "Escalation Path"
+  category: "ARSS-GOV"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Includes escalation_required and escalation triggers."
+  * path: "examples/trace-record.example.yaml"
+    note: "Records human_review_required event."
+    limitations: []
+
+* id: "ARSS-GOV-004"
+  name: "Accountability Role"
+  category: "ARSS-GOV"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Defines accountable_role as human_reviewer."
+  * path: "examples/trace-record.example.yaml"
+    note: "Defines reviewer_role."
+    limitations:
+  * "Accountability is illustrative, not organizationally assigned."
+
+* id: "ARSS-GOV-005"
+  name: "Governance Review"
+  category: "ARSS-GOV"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Includes governance_review_completed event."
+    limitations:
+  * "No formal governance process is implemented."
+
+* id: "ARSS-GOV-006"
+  name: "Prohibited Automation"
+  category: "ARSS-GOV"
+  level: "Governed"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Lists prohibited uses."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Lists excluded high-impact automation."
+    limitations:
+  * "Prohibited automation is documented but not technically enforced."
+
+* id: "ARSS-GOV-007"
+  name: "Governance Documentation"
+  category: "ARSS-GOV"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/conformance.md"
+    note: "Defines governance documentation expectations."
+  * path: "docs/requirements.md"
+    note: "Defines governance requirements."
+    limitations: []
+
+* id: "ARSS-GOV-008"
+  name: "Audit Readiness"
+  category: "ARSS-GOV"
+  level: "Governed"
+  status: "not_addressed"
+  evidence: []
+  limitations:
+
+  * "No audit checklist or audit-ready trace controls are provided yet."
+
+* id: "ARSS-HAL-001"
+  name: "Human Authority Boundary"
+  category: "ARSS-HAL"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/architecture-model.md"
+    note: "Defines Human Authority Layer."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines human_authority_boundary."
+    limitations: []
+
+* id: "ARSS-HAL-002"
+  name: "Advisory Status"
+  category: "ARSS-HAL"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Defines ai_output_status as advisory_only."
+  * path: "examples/trace-record.example.yaml"
+    note: "Defines advisory-only AI output status."
+    limitations: []
+
+* id: "ARSS-HAL-003"
+  name: "Human Review Requirement"
+  category: "ARSS-HAL"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "Records human_review_required."
+    limitations: []
+
+* id: "ARSS-HAL-004"
+  name: "Human Override"
+  category: "ARSS-HAL"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Defines override_allowed as true."
+    limitations:
+  * "No override workflow is implemented."
+
+* id: "ARSS-HAL-005"
+  name: "Human Decision Record"
+  category: "ARSS-HAL"
+  level: "Core"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/trace-record.example.yaml"
+    note: "States that decision record is required."
+    limitations:
+  * "Final human decision is not recorded."
+
+* id: "ARSS-HAL-006"
+  name: "No False Authority Representation"
+  category: "ARSS-HAL"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/claim-boundaries.md"
+    note: "Warns against false authority representation."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines advisory-only output status."
+    limitations: []
+
+* id: "ARSS-HAL-007"
+  name: "Human Responsibility Clarity"
+  category: "ARSS-HAL"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Defines reviewer_role as human_reviewer."
+    limitations:
+  * "No organizational responsibility model is defined."
+
+* id: "ARSS-CONF-001"
+  name: "Conformance Profile Declaration"
+  category: "ARSS-CONF"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Declares Profile A."
+    limitations: []
+
+* id: "ARSS-CONF-002"
+  name: "Covered Scope"
+  category: "ARSS-CONF"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines covered reasoning tasks."
+    limitations: []
+
+* id: "ARSS-CONF-003"
+  name: "Excluded Scope"
+  category: "ARSS-CONF"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Defines excluded reasoning tasks."
+    limitations: []
+
+* id: "ARSS-CONF-004"
+  name: "Evidence of Alignment"
+  category: "ARSS-CONF"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Lists supporting evidence."
+  * path: "examples/requirement-mapping.example.yaml"
+    note: "Maps requirements to evidence."
+    limitations: []
+
+* id: "ARSS-CONF-005"
+  name: "Limitation Statement"
+  category: "ARSS-CONF"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Lists known limitations."
+  * path: "examples/requirement-mapping.example.yaml"
+    note: "Includes limitations per requirement."
+    limitations: []
+
+* id: "ARSS-CONF-006"
+  name: "No Certification Misrepresentation"
+  category: "ARSS-CONF"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/claim-boundaries.md"
+    note: "States that certification is not claimed."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Sets official_certification to false."
+    limitations: []
+
+* id: "ARSS-DOC-001"
+  name: "Architecture Documentation"
+  category: "ARSS-DOC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/architecture-model.md"
+    note: "Documents architecture."
+  * path: "annex/annex-a-architecture-diagram.md"
+    note: "Provides diagrams."
+    limitations: []
+
+* id: "ARSS-DOC-002"
+  name: "Terminology Consistency"
+  category: "ARSS-DOC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "docs/terminology.md"
+    note: "Defines terminology."
+    limitations: []
+
+* id: "ARSS-DOC-003"
+  name: "Requirement Mapping"
+  category: "ARSS-DOC"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/requirement-mapping.example.yaml"
+    note: "Provides requirement mapping example."
+    limitations:
+  * "Mapping is illustrative and self-declared."
+
+* id: "ARSS-DOC-004"
+  name: "Stability Assessment Records"
+  category: "ARSS-DOC"
+  level: "Extended"
+  status: "addressed"
+  evidence:
+
+  * path: "examples/stability-assessment.example.yaml"
+    note: "Provides stability assessment record example."
+    limitations:
+  * "Example is not based on a deployed system."
+
+* id: "ARSS-DOC-005"
+  name: "Known Limitations"
+  category: "ARSS-DOC"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "Includes non-claims."
+  * path: "examples/conformance-statement.example.yaml"
+    note: "Lists known limitations."
+    limitations: []
+
+* id: "ARSS-CHG-001"
+  name: "Stability-Relevant Change Identification"
+  category: "ARSS-CHG"
+  level: "Extended"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "docs/standardization-readiness.md"
+    note: "Identifies future changes and WD1 transition items."
+  * path: "CHANGELOG.md"
+    note: "Documents release changes."
+    limitations:
+  * "No formal change-control procedure is implemented."
+
+* id: "ARSS-CHG-002"
+  name: "Change Review"
+  category: "ARSS-CHG"
+  level: "Governed"
+  status: "not_addressed"
+  evidence: []
+  limitations:
+
+  * "No governed change review process is defined."
+
+* id: "ARSS-CHG-003"
+  name: "Change Record"
+  category: "ARSS-CHG"
+  level: "Governed"
+  status: "partially_addressed"
+  evidence:
+
+  * path: "CHANGELOG.md"
+    note: "Provides repository-level change history."
+    limitations:
+  * "No governed change record format is provided."
+
+* id: "ARSS-CHG-004"
+  name: "Version Identification"
+  category: "ARSS-CHG"
+  level: "Core"
+  status: "addressed"
+  evidence:
+
+  * path: "README.md"
+    note: "Identifies WD0."
+  * path: "CITATION.cff"
+    note: "Identifies version as WD0."
+  * path: "CHANGELOG.md"
+    note: "Records WD0 release."
+    limitations: []
+
+gaps:
+
+* gap_id: "gap-001"
+  related_requirements:
+
+  * "ARSS-TR-006"
+  * "ARSS-TR-008"
+  * "ARSS-GOV-008"
+    gap_summary: "Audit-ready trace integrity and access control are not yet defined."
+    priority: "high"
+    planned_action: "Add schemas, audit checklist, and trace integrity guidance in future drafts."
+
+* gap_id: "gap-002"
+  related_requirements:
+
+  * "ARSS-CW-007"
+  * "ARSS-OC-006"
+  * "ARSS-OC-007"
+    gap_summary: "False convergence and persistent oscillation examples are not yet provided."
+    priority: "medium"
+    planned_action: "Add dedicated convergence-window and oscillation-event examples."
+
+* gap_id: "gap-003"
+  related_requirements:
+
+  * "ARSS-CHG-002"
+  * "ARSS-CHG-003"
+    gap_summary: "Governed change review is not yet defined."
+    priority: "medium"
+    planned_action: "Add change-control record example and audit checklist."
+
+* gap_id: "gap-004"
+  related_requirements:
+
+  * "ARSS-VA-003"
+  * "ARSS-VA-004"
+  * "ARSS-VA-005"
+    gap_summary: "Value-conflict detection and response are still example-light."
+    priority: "medium"
+    planned_action: "Add value-conflict example in a future revision."
+
+claim_boundaries:
+official_standard_claimed: false
+certification_claimed: false
+legal_compliance_claimed: false
+complete_ai_safety_claimed: false
+guaranteed_correctness_claimed: false
+universal_applicability_claimed: false
+production_readiness_claimed: false
+notes:
+- "This requirement mapping is illustrative."
+- "This mapping is self-declared and documentation-oriented."
+- "This mapping does not represent official certification."
+- "This mapping does not assess a deployed production system."
+
+known_limitations:
+
+* "This mapping is not independently audited."
+* "This mapping is not based on a deployed system."
+* "Several governed requirements are only partially addressed or not addressed."
+* "No validation schema is currently applied."
+* "No automated validation script is currently applied."
+* "No official certification is claimed."
+
+review:
+review_status: "example_complete"
+next_steps:
+- "Create schemas/stability-assessment.schema.json."
+- "Create schemas/conformance-statement.schema.json."
+- "Create schemas/trace-record.schema.json."
+- "Create scripts/validate_examples.py after schemas are added."
+- "Create docs/evaluation-protocol.md."
+- "Create docs/audit-checklist.md."
