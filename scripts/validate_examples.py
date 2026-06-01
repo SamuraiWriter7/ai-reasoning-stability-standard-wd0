@@ -74,7 +74,6 @@ def format_error_path(error):
    if not error.absolute_path:
        return "$"
 
-```
 parts = ["$"]
 
 for part in error.absolute_path:
@@ -84,7 +83,6 @@ for part in error.absolute_path:
         parts.append(f".{part}")
 
 return "".join(parts)
-```
 
 def validate_file(example_path, schema_path):
     """Validate one example file against one schema file."""
@@ -93,7 +91,6 @@ try:
 except Exception as exc:
     return [f"Failed to load YAML: {example_path}\n  {exc}"]
 
-```
 try:
     schema = load_json(schema_path)
 except Exception as exc:
@@ -118,7 +115,6 @@ for error in validation_errors:
     errors.append(f"{path}: {error.message}")
 
 return errors
-```
 
 def main():
     """Run all validations."""
@@ -126,7 +122,6 @@ def main():
     print(f"Repository root: {REPO_ROOT}")
     print("")
 
-```
 total_errors = 0
 skipped = 0
 
@@ -190,7 +185,6 @@ if total_errors > 0:
 print("")
 print("All available example validations passed.")
 return 0
-```
 
 if **name** == "**main**":
 sys.exit(main())
