@@ -12,16 +12,19 @@ The format is inspired by Keep a Changelog, but adapted for standardization-orie
 
 ### Planned
 
-* Add JSON Schema or YAML Schema for stability assessment records.
-* Add `examples/conformance-statement.example.yaml`.
-* Add `examples/trace-record.example.yaml`.
-* Add `examples/requirement-mapping.example.yaml`.
-* Add validation scripts for example YAML files.
+* Add `schemas/requirement-mapping.schema.json`.
+* Add `examples/oscillation-event.example.yaml`.
+* Add `examples/convergence-window.example.yaml`.
+* Add `examples/human-authority-decision.example.yaml`.
+* Add `docs/evaluation-protocol.md`.
+* Add `docs/audit-checklist.md`.
+* Add `docs/implementation-notes.md`.
+* Add WD1 preparation notes.
 * Refine requirement IDs and conformance profiles.
 * Expand mapping to external AI standards and governance frameworks.
 * Add implementation notes for multi-agent and multi-wing systems.
 * Add audit checklist templates.
-* Add WD1 preparation notes.
+* Add additional validation targets.
 
 ---
 
@@ -37,13 +40,24 @@ The format is inspired by Keep a Changelog, but adapted for standardization-orie
 * Added `docs/requirements.md` to define preliminary ARSS requirement IDs.
 * Added `docs/conformance.md` to define preliminary conformance profiles.
 * Added `docs/terminology.md` to define core terminology.
+* Added `docs/standardization-readiness.md` to assess WD0 readiness and outline the path toward WD1.
 * Added `docs/relationship-to-multi-wing.md` to explain the relationship between ARSS-WD0 and Multi-Wing Architecture.
 * Added `docs/relationship-to-convergence-window.md` to explain the role of convergence-window evaluation.
 * Added `docs/relationship-to-oscillation-control.md` to explain the role of oscillation control.
 * Added `annex/annex-a-architecture-diagram.md` with ASCII and Mermaid diagrams.
 * Added `annex/annex-b-use-cases.md` with representative use cases.
 * Added `annex/annex-c-mapping-to-existing-standards.md` with informative mapping notes.
-* Added `examples/stability-assessment.example.yaml` as the first machine-readable example.
+* Added `examples/stability-assessment.example.yaml` as the first machine-readable stability assessment example.
+* Added `examples/conformance-statement.example.yaml` as a machine-readable conformance statement example.
+* Added `examples/trace-record.example.yaml` as a machine-readable trace record example.
+* Added `examples/requirement-mapping.example.yaml` as a machine-readable requirement mapping example.
+* Added `schemas/stability-assessment.schema.json` to validate stability assessment examples.
+* Added `schemas/conformance-statement.schema.json` to validate conformance statement examples.
+* Added `schemas/trace-record.schema.json` to validate trace record examples.
+* Added `scripts/validate_examples.py` to validate example YAML files against JSON Schemas.
+* Added `.github/workflows/validate-examples.yml` to run automated example validation with GitHub Actions.
+* Added `CITATION.cff` for citation metadata.
+* Added `LICENSE` using the MIT License.
 
 ### Core Concepts Added
 
@@ -61,6 +75,10 @@ The format is inspired by Keep a Changelog, but adapted for standardization-orie
 * Stable Misalignment
 * Conformance Profiles
 * Claim Boundaries
+* Machine-Readable Stability Assessment
+* Machine-Readable Trace Record
+* Machine-Readable Conformance Statement
+* Schema-Based Validation
 
 ### Requirement Categories Added
 
@@ -92,6 +110,53 @@ The format is inspired by Keep a Changelog, but adapted for standardization-orie
 ### Examples Added
 
 * `examples/stability-assessment.example.yaml`
+* `examples/conformance-statement.example.yaml`
+* `examples/trace-record.example.yaml`
+* `examples/requirement-mapping.example.yaml`
+
+### Schemas Added
+
+* `schemas/stability-assessment.schema.json`
+* `schemas/conformance-statement.schema.json`
+* `schemas/trace-record.schema.json`
+
+### Scripts Added
+
+* `scripts/validate_examples.py`
+
+### GitHub Actions Added
+
+* `.github/workflows/validate-examples.yml`
+
+### Validation
+
+The repository now supports local validation of example YAML files.
+
+Run:
+
+```bash
+python scripts/validate_examples.py
+```
+
+The validation script currently validates:
+
+```text
+examples/stability-assessment.example.yaml
+examples/conformance-statement.example.yaml
+examples/trace-record.example.yaml
+```
+
+The following example is currently present but schema validation is optional until its schema is added:
+
+```text
+examples/requirement-mapping.example.yaml
+```
+
+Planned schema:
+
+```text
+schemas/requirement-mapping.schema.json
+```
 
 ### Claim Boundaries
 
@@ -100,7 +165,9 @@ This release clarifies that ARSS-WD0 is:
 * a working draft;
 * a standardization-oriented proposal;
 * a reasoning-stability framework;
-* a self-assessment and documentation aid.
+* a self-assessment and documentation aid;
+* a schema-supported example package;
+* an early validation-enabled repository.
 
 This release does not claim:
 
@@ -110,13 +177,14 @@ This release does not claim:
 * complete AI safety;
 * guaranteed correctness;
 * universal applicability;
+* production readiness;
 * replacement of existing AI governance frameworks.
 
 ### Notes
 
-WD0 establishes the initial structure of the repository.
+WD0 establishes the initial structure of the repository and now includes a basic machine-readable validation path.
 
-The main purpose of this release is to define the conceptual, architectural, requirement, conformance, and documentation foundation for future refinement.
+The main purpose of this release is to define the conceptual, architectural, requirement, conformance, documentation, example, schema, and validation foundation for future refinement.
 
 This release should be treated as an initial working draft, not as a finalized standard.
 
@@ -130,16 +198,16 @@ Suggested milestone flow:
 
 ```text
 WD0
-  Initial structure, terminology, requirements, conformance model, examples.
+  Initial structure, terminology, requirements, conformance model, examples, schemas, and validation.
 
 WD1
-  Refined requirement language, expanded examples, schema support, review improvements.
+  Refined requirement language, expanded examples, stronger schemas, review improvements, evaluation protocol, and audit checklist.
 
 WD2
-  Stronger conformance model, external mapping updates, implementation guidance.
+  Stronger conformance model, external mapping updates, implementation guidance, and domain-specific profiles.
 
 Candidate Draft
-  Stabilized terminology, requirement mapping, schemas, and review process.
+  Stabilized terminology, requirement mapping, schemas, validation, and review process.
 
 Release 1.0
   First mature public specification package.
@@ -161,10 +229,14 @@ It focuses on:
 * describing the architecture;
 * creating requirement IDs;
 * defining conformance profiles;
-* adding use cases and examples;
+* adding use cases and annexes;
+* creating machine-readable examples;
+* adding JSON Schemas;
+* adding local validation script;
+* adding GitHub Actions validation workflow;
 * connecting ARSS-WD0 to existing AI governance and standards discussions.
 
-Future drafts may revise terminology, requirement IDs, conformance profiles, examples, and mappings.
+Future drafts may revise terminology, requirement IDs, conformance profiles, examples, schemas, validation scripts, workflows, and mappings.
 
 ---
 
@@ -185,6 +257,9 @@ Governance
 Human Authority
 Conformance
 Claim Boundaries
+Examples
+Schemas
+Validation
 ```
 
 The core message of WD0 is:
@@ -193,3 +268,4 @@ The core message of WD0 is:
 AI reasoning stability is not a property of the final answer alone.
 It is a property of the reasoning structure that produces, evaluates, records, governs, and authorizes that answer.
 ```
+
