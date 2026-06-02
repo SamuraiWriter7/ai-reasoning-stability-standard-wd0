@@ -12,7 +12,7 @@
 
 This repository contains **Working Draft 0** of the **AI Reasoning Stability Standard**.
 
-This working draft proposes a structural framework for describing and assessing AI reasoning stability by integrating:
+This working draft proposes a structural framework for describing, assessing, and documenting AI reasoning stability by integrating:
 
 * Multi-Wing structural autonomy
 * Convergence-window evaluation
@@ -23,6 +23,9 @@ This working draft proposes a structural framework for describing and assessing 
 * Human authority boundaries
 * Conformance profiles
 * Claim boundaries
+* Machine-readable examples
+* JSON Schema validation
+* Automated example validation
 
 The goal of this repository is to provide a standardization-oriented framework for AI systems that require stable, bounded, traceable, reviewable, and governable reasoning behavior.
 
@@ -90,7 +93,10 @@ It covers:
 * governance;
 * human authority;
 * conformance profiles;
-* documentation and claim boundaries.
+* documentation and claim boundaries;
+* example records;
+* schema-based validation;
+* automated validation workflows.
 
 This working draft may be relevant to:
 
@@ -224,6 +230,7 @@ ai-reasoning-stability-standard-wd0/
 │   ├── requirements.md
 │   ├── conformance.md
 │   ├── terminology.md
+│   ├── standardization-readiness.md
 │   ├── relationship-to-multi-wing.md
 │   ├── relationship-to-convergence-window.md
 │   ├── relationship-to-oscillation-control.md
@@ -233,7 +240,19 @@ ai-reasoning-stability-standard-wd0/
 │   ├── annex-b-use-cases.md
 │   └── annex-c-mapping-to-existing-standards.md
 ├── examples/
-│   └── stability-assessment.example.yaml
+│   ├── stability-assessment.example.yaml
+│   ├── conformance-statement.example.yaml
+│   ├── trace-record.example.yaml
+│   └── requirement-mapping.example.yaml
+├── schemas/
+│   ├── stability-assessment.schema.json
+│   ├── conformance-statement.schema.json
+│   └── trace-record.schema.json
+├── scripts/
+│   └── validate_examples.py
+├── .github/
+│   └── workflows/
+│       └── validate-examples.yml
 ├── CHANGELOG.md
 ├── CITATION.cff
 └── LICENSE
@@ -332,6 +351,14 @@ Key terms include:
 
 ---
 
+### `docs/standardization-readiness.md`
+
+Evaluates the current maturity of ARSS-WD0 and outlines the path from WD0 toward WD1.
+
+It identifies current strengths, gaps, readiness level, recommended next files, schema needs, validation needs, and standardization-oriented refinement priorities.
+
+---
+
 ### `docs/relationship-to-multi-wing.md`
 
 Explains how Multi-Wing Architecture functions as a component layer within ARSS-WD0.
@@ -411,6 +438,8 @@ Mapped areas include:
 
 ---
 
+## Examples
+
 ### `examples/stability-assessment.example.yaml`
 
 Provides a machine-readable example of an ARSS-WD0 stability assessment record.
@@ -437,23 +466,147 @@ The example includes:
 
 ---
 
-### `CHANGELOG.md`
+### `examples/conformance-statement.example.yaml`
 
-Documents repository changes, release notes, planned future work, and working-draft milestones.
+Provides a machine-readable example of a self-declared ARSS-WD0 conformance statement.
+
+The example demonstrates:
+
+* Profile A documentation alignment;
+* covered and excluded reasoning tasks;
+* human authority boundary;
+* traceability scope;
+* governance process;
+* supporting evidence;
+* known limitations;
+* non-certification claim boundaries.
 
 ---
 
-### `CITATION.cff`
+### `examples/trace-record.example.yaml`
 
-Provides citation metadata for the repository.
+Provides a machine-readable trace record example.
+
+The example demonstrates:
+
+* task framing;
+* assumptions;
+* trace events;
+* wing outputs;
+* conflict detection;
+* convergence-window evaluation;
+* oscillation check;
+* value assessment;
+* governance review;
+* human authority requirement;
+* final reasoning state.
 
 ---
 
-### `LICENSE`
+### `examples/requirement-mapping.example.yaml`
 
-Defines the repository license.
+Provides a machine-readable requirement mapping example.
 
-This repository uses the MIT License.
+The example maps ARSS requirement IDs to evidence files and indicates whether each requirement is:
+
+```text
+addressed
+partially_addressed
+not_addressed
+not_applicable
+planned
+```
+
+---
+
+## Schemas
+
+The `schemas/` directory contains JSON Schemas for validating machine-readable examples.
+
+### `schemas/stability-assessment.schema.json`
+
+Validates:
+
+```text
+examples/stability-assessment.example.yaml
+```
+
+### `schemas/conformance-statement.schema.json`
+
+Validates:
+
+```text
+examples/conformance-statement.example.yaml
+```
+
+### `schemas/trace-record.schema.json`
+
+Validates:
+
+```text
+examples/trace-record.example.yaml
+```
+
+The requirement-mapping schema is planned for a future revision.
+
+---
+
+## Validation
+
+This repository includes a validation script:
+
+```text
+scripts/validate_examples.py
+```
+
+The script validates available example YAML files against their corresponding JSON Schema files.
+
+### Install Dependencies
+
+```bash
+python -m pip install pyyaml jsonschema
+```
+
+### Run Validation
+
+```bash
+python scripts/validate_examples.py
+```
+
+The script currently validates:
+
+```text
+examples/stability-assessment.example.yaml
+examples/conformance-statement.example.yaml
+examples/trace-record.example.yaml
+```
+
+If `schemas/requirement-mapping.schema.json` is not present, the requirement-mapping example is skipped as an optional validation target.
+
+---
+
+## GitHub Actions
+
+This repository includes an example validation workflow:
+
+```text
+.github/workflows/validate-examples.yml
+```
+
+The workflow runs on:
+
+* pushes to `main`;
+* pull requests to `main`;
+* manual workflow dispatch.
+
+It validates examples when files under the following paths change:
+
+```text
+examples/**
+schemas/**
+scripts/validate_examples.py
+.github/workflows/validate-examples.yml
+```
 
 ---
 
@@ -470,15 +623,24 @@ For first-time readers, the recommended reading order is:
 6. annex/annex-a-architecture-diagram.md
 7. docs/requirements.md
 8. docs/conformance.md
-9. docs/relationship-to-multi-wing.md
-10. docs/relationship-to-convergence-window.md
-11. docs/relationship-to-oscillation-control.md
-12. annex/annex-b-use-cases.md
-13. annex/annex-c-mapping-to-existing-standards.md
-14. examples/stability-assessment.example.yaml
-15. CHANGELOG.md
-16. CITATION.cff
-17. LICENSE
+9. docs/standardization-readiness.md
+10. docs/relationship-to-multi-wing.md
+11. docs/relationship-to-convergence-window.md
+12. docs/relationship-to-oscillation-control.md
+13. annex/annex-b-use-cases.md
+14. annex/annex-c-mapping-to-existing-standards.md
+15. examples/stability-assessment.example.yaml
+16. examples/conformance-statement.example.yaml
+17. examples/trace-record.example.yaml
+18. examples/requirement-mapping.example.yaml
+19. schemas/stability-assessment.schema.json
+20. schemas/conformance-statement.schema.json
+21. schemas/trace-record.schema.json
+22. scripts/validate_examples.py
+23. .github/workflows/validate-examples.yml
+24. CHANGELOG.md
+25. CITATION.cff
+26. LICENSE
 ```
 
 For quick review:
@@ -497,6 +659,9 @@ docs/architecture-model.md
 docs/requirements.md
 docs/conformance.md
 examples/stability-assessment.example.yaml
+examples/trace-record.example.yaml
+schemas/stability-assessment.schema.json
+scripts/validate_examples.py
 ```
 
 For governance review:
@@ -505,8 +670,20 @@ For governance review:
 docs/claim-boundaries.md
 docs/requirements.md
 docs/conformance.md
+docs/standardization-readiness.md
 annex/annex-b-use-cases.md
 annex/annex-c-mapping-to-existing-standards.md
+examples/conformance-statement.example.yaml
+examples/requirement-mapping.example.yaml
+```
+
+For machine-readable validation:
+
+```text
+examples/
+schemas/
+scripts/validate_examples.py
+.github/workflows/validate-examples.yml
 ```
 
 ---
@@ -728,7 +905,10 @@ Focus:
 * conformance profiles;
 * relationship documents;
 * annexes;
-* example stability assessment.
+* machine-readable examples;
+* JSON Schemas;
+* validation script;
+* GitHub Actions validation workflow.
 
 ---
 
@@ -740,13 +920,15 @@ Possible additions:
 
 * refined requirement language;
 * expanded examples;
-* machine-readable schemas;
-* conformance-statement example;
-* trace-record example;
-* requirement-mapping example;
-* validation scripts;
+* requirement-mapping schema;
+* conformance-statement schema refinement;
+* trace-record schema refinement;
+* additional validation scripts;
 * implementation notes;
-* audit checklist templates.
+* audit checklist templates;
+* evaluation protocol;
+* persistent oscillation example;
+* false convergence example.
 
 ---
 
@@ -773,8 +955,8 @@ Potential focus:
 
 * stabilized terminology;
 * reviewed requirement IDs;
-* more complete examples;
-* schema validation;
+* complete schema set;
+* validation workflows;
 * improved claim boundaries;
 * community or expert review.
 
@@ -785,14 +967,13 @@ Potential focus:
 Potential future files include:
 
 ```text
-schemas/stability-assessment.schema.json
-schemas/conformance-statement.schema.json
-examples/conformance-statement.example.yaml
-examples/trace-record.example.yaml
-examples/requirement-mapping.example.yaml
-scripts/validate_examples.py
-docs/implementation-notes.md
+schemas/requirement-mapping.schema.json
+examples/oscillation-event.example.yaml
+examples/convergence-window.example.yaml
+examples/human-authority-decision.example.yaml
+docs/evaluation-protocol.md
 docs/audit-checklist.md
+docs/implementation-notes.md
 docs/wd1-preparation-notes.md
 ```
 
@@ -845,6 +1026,9 @@ Governance
 Human Authority
 Conformance
 Claim Boundaries
+Examples
+Schemas
+Validation
 ```
 
 Its core contribution is to treat AI reasoning stability as a reviewable structure, not merely as a final-output impression.
@@ -853,5 +1037,4 @@ The working draft is intentionally bounded.
 
 It is not an official standard, not a certification scheme, not a legal compliance tool, and not a complete AI safety framework.
 
-It is a foundation for further research, documentation, implementation discussion, governance review, and standardization-oriented refinement.
-
+It is a foundation for further research, documentation, implementation discussion, governance review, validation, and standardization-oriented refinement.
